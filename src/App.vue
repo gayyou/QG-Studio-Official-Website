@@ -1,15 +1,10 @@
-<template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-    </div>
-    <router-view/>
-  </div>
-</template>
-
 <style lang="scss">
+@font-face {
+  font-family: 'SourceHanSansCN-Regular';
+  src: url('assets/fonts/SourceHanSansCN-Regular.ttf') format('truetype');
+}
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: 'SourceHanSansCN-Regular', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -26,3 +21,25 @@
   }
 }
 </style>
+
+
+<template>
+  <div id="app">
+    <nav-list></nav-list>
+  </div>
+</template>
+
+<script lang="ts">
+import Vue from 'vue'
+import Component from 'vue-class-component'
+import nav from './components/nav/nav.vue'
+
+@Component({
+  components: {
+    'nav-list': nav
+  }
+})
+export default class App extends Vue {
+
+}
+</script>
