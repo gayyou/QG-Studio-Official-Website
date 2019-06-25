@@ -26,6 +26,7 @@
 <template>
   <div id="app">
     <nav-list></nav-list>
+    <router-view></router-view>
   </div>
 </template>
 
