@@ -9,24 +9,30 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  overflow-x: hidden; 
 }
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+.footer {
+  position: relative;
+}
+.el-scrollbar__wrap {
+  overflow-x: hidden!important;
+}
+.el-scrollbar__thumb:hover {
+  background-color: rgba(255, 255, 255, .8)!important;
+}
+.el-scrollbar__thumb {
+  background-color: rgba(255, 255, 255, .3)!important;
 }
 </style>
 
 
 <template>
   <div id="app">
-    <nav-list></nav-list>
-    <router-view></router-view>
+    <el-scrollbar style="height: 100vh;width: 100%;">
+      <nav-list></nav-list>
+      <router-view></router-view>
+      <page-footer class="footer"></page-footer>
+    </el-scrollbar>
   </div>
 </template>
 
@@ -34,13 +40,17 @@
 import Vue from 'vue'
 import Component from 'vue-class-component'
 import nav from './components/nav/nav.vue'
+import pageFooter from './components/pageFooter/pageFooter.vue'
 
 @Component({
   components: {
-    'nav-list': nav
+    'nav-list': nav,
+    'page-footer': pageFooter
   }
 })
 export default class App extends Vue {
-
+  mouted() {
+    // document.getElementsByClassName('el-scrollbar__wrap')[0].style.overflowX = 'hidden';
+  }
 }
 </script>

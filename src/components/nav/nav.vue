@@ -90,6 +90,12 @@ export default class Nav extends Vue {
     {
       value: '关于QG',
       label: 'about',
+      children: [],
+      isActive: true
+    },
+    {
+      value: '我们',
+      label: 'we',
       children: [
         {
           value: '指导老师',
@@ -108,14 +114,8 @@ export default class Nav extends Vue {
           label: '',
           children: [],
           isActive: false
-        },
+        }
       ],
-      isActive: true
-    },
-    {
-      value: '我们',
-      label: 'we',
-      children: [],
       isActive: false
     },
     {
@@ -139,7 +139,20 @@ export default class Nav extends Vue {
     {
       value: '专栏',
       label: 'column',
-      children: [],
+      children: [
+        {
+          value: 'QG特色',
+          label: '',
+          children: [],
+          isActive: false
+        },
+        {
+          value: 'QG大事记',
+          label: '',
+          children: [],
+          isActive: false
+        }
+      ],
       isActive: false
     },
   ];
@@ -155,6 +168,9 @@ export default class Nav extends Vue {
     for (let i = 0; i < this.$data.firstNavList.length; i++) {
       this.$data.firstNavList[i].isActive = false;
     }
+    
+    this.$data.firstNavList[index].isActive = true;
+
     this.$router.replace({
       name: this.$data.firstNavList[index].label
     })
