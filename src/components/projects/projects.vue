@@ -6,7 +6,7 @@
     </main>
     <footer class="footer">
       <div class="backtotop-button">
-        <img src="../assets/icons/up.png" alt>
+        <img src="../../assets/icons/up.png" alt>
       </div>
     </footer>
   </div>

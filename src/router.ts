@@ -1,13 +1,12 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import index from './views/index.vue'
 import about from './components/about/about.vue'
-import blob from './views/blob.vue'
-import column from './views/column.vue'
-import honors from './views/honors.vue'
-import members from './views/members.vue'
-import projects from './views/projects.vue'
-import we from './views/we.vue';
+import blob from './components/blob/blob.vue'
+import column from './components/column/column.vue'
+import honors from './components/honors/honors.vue'
+import members from './components/members/members.vue'
+import projects from './components/projects/projects.vue'
+import we from './components/we/we.vue';
 
 Vue.use(Router)
 
@@ -18,7 +17,7 @@ export default new Router({
     {
       path: '/',
       name: 'index',
-      component: index
+      component: about
     },
     {
       path: '/about',

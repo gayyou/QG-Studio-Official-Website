@@ -19,14 +19,14 @@
           </div>
           <div class="card-right">
             <div class="img-container">
-               <img src="../assets/images/2.jpg" alt>
+               <img src="../../assets/images/2.jpg" alt>
             </div>
           </div>
         </div>
         <div class="card">
           <div class="card-left">
             <div class="img-container">
-               <img src="../assets/images/2.jpg" alt>
+               <img src="../../assets/images/2.jpg" alt>
             </div>
           </div>
           <div class="card-right">
@@ -51,7 +51,7 @@
           </div>
           <div class="card-right">
             <div class="img-container">
-               <img src="../assets/images/2.jpg" alt>
+               <img src="../../assets/images/2.jpg" alt>
             </div>
           </div>
         </div>
@@ -61,7 +61,7 @@
         <div class="part-2-left">
           <div class="card-2">
             <div class="card-2-img-container">
-              <img src="../assets/images/2.jpg" alt>
+              <img src="../../assets/images/2.jpg" alt>
             </div>
             <div class="time-container">
               2005.X.X
@@ -72,7 +72,7 @@
           </div>
           <div class="card-2">
             <div class="card-2-img-container">
-              <img src="../assets/images/2.jpg" alt>
+              <img src="../../assets/images/2.jpg" alt>
             </div>
             <div class="time-container">
               2005.X.X
@@ -83,7 +83,7 @@
           </div>
           <div class="card-2">
             <div class="card-2-img-container">
-              <img src="../assets/images/2.jpg" alt>
+              <img src="../../assets/images/2.jpg" alt>
             </div>
             <div class="time-container">
               2005.X.X
@@ -97,14 +97,14 @@
           <div class="start"></div>
           <div class="line"></div>
           <div class="arrow">
-        <img src="../assets/icons/up.png" alt>
+        <img src="../../assets/icons/up.png" alt>
 
           </div>
         </div >
         <div class="part-2-right">
           <div class="card-2">
             <div class="card-2-img-container">
-              <img src="../assets/images/2.jpg" alt>
+              <img src="../../assets/images/2.jpg" alt>
             </div>
             <div class="time-container">
               2005.X.X
@@ -115,7 +115,7 @@
           </div>
           <div class="card-2">
             <div class="card-2-img-container">
-              <img src="../assets/images/2.jpg" alt>
+              <img src="../../assets/images/2.jpg" alt>
             </div>
             <div class="time-container">
               2005.X.X
@@ -130,7 +130,7 @@
     <footer class="footer">
       <p>QG十五年，从未停步</p>
       <div class="backtotop-button">
-        <img src="../assets/icons/up.png" alt>
+        <img src="../../assets/icons/up.png" alt>
       </div>
     </footer>
   </div>

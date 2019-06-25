@@ -7,7 +7,8 @@ export const routerOptions: any = {
 
   ],
   column: [
-
+    'importantEvent',
+    'characteristic'
   ],
   honors: [
 

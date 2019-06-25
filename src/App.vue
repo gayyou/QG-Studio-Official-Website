@@ -18,10 +18,10 @@
   overflow-x: hidden!important;
 }
 .el-scrollbar__thumb:hover {
-  background-color: rgba(255, 255, 255, .8)!important;
+  background-color: rgba(0, 0, 0, .8)!important;
 }
 .el-scrollbar__thumb {
-  background-color: rgba(255, 255, 255, .3)!important;
+  background-color: rgba(0, 0, 0, .3)!important;
 }
 </style>
 

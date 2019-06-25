@@ -16,7 +16,7 @@ export interface AboutList {
   // 标题
   title: String;
   // 信息
-  message: String;
+  message: Array<String>;
   // 主键
   id: String
 }
