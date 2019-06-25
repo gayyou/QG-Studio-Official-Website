@@ -1,8 +1,8 @@
 <template>
   <div>
     <header class="first-header">
-      <a href>QG特色</a>
-      <a href>QG大事件</a>
+      <a href id="characteristic">QG特色</a>
+      <a href id="importantEvent">QG大事件</a>
     </header>
     <main>
       <h1 class="second-header">QG特色</h1>
@@ -15,7 +15,7 @@
               <div
                 class="introduce-container"
               >这个是内容这个是内容这个是内容这个是内容这个是内容这个是内容这个是内容这个是内容这个是内容这个是内容这个是内容这个是内容这个是内容</div>
-            </div>
+            </div> 
           </div>
           <div class="card-right">
             <div class="img-container">

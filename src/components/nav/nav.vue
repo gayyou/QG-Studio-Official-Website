@@ -38,7 +38,7 @@
       font-size: 0.24rem;
       margin-left: 0.32rem;
       margin-right: 0.32rem;
-      color: #707070;
+      color: #b0b0b0;
     }
     li:nth-child(1) {
       margin-left: 3.1rem;
@@ -46,7 +46,7 @@
   }
 }
 .nav-list-active {
-  color: #1f1f1f;
+  color: #2a2a2a!important;
 }
 </style>
 
@@ -58,6 +58,15 @@
     <nav class="nav-list-container" @click="switchFirstNav">
       <li
         v-for="(item, index) in firstNavList"
+        :key="item.value"
+        :data-index="index"
+        :class="item.isActive ? 'nav-list-active' : ''"
+      >{{ item.value }}</li>
+    </nav>
+    <nav>
+      <li
+        v-if="secondNavList.length"
+        v-for="(item, index) in secondNavList"
         :key="item.value"
         :data-index="index"
         :class="item.isActive ? 'nav-list-active' : ''"
@@ -80,41 +89,61 @@ export default class Nav extends Vue {
   firstNavList: Array<NavList> = [
     {
       value: '关于QG',
-      label: '',
-      children: [],
-      isAcitve: true
+      label: 'about',
+      children: [
+        {
+          value: '指导老师',
+          label: '',
+          children: [],
+          isActive: false
+        },
+        {
+          value: '研究方向',
+          label: '',
+          children: [],
+          isActive: false
+        },
+        {
+          value: '最近的荣誉',
+          label: '',
+          children: [],
+          isActive: false
+        },
+      ],
+      isActive: true
     },
     {
       value: '我们',
-      label: '',
+      label: 'we',
       children: [],
-      isAcitve: false
+      isActive: false
     },
     {
       value: '成员',
-      label: '',
+      label: 'members',
       children: [],
-      isAcitve: false
+      isActive: false
     },
     {
       value: '项目',
-      label: '',
+      label: 'projects',
       children: [],
-      isAcitve: false
+      isActive: false
     },
     {
       value: '荣誉',
-      label: '',
+      label: 'honors',
       children: [],
-      isAcitve: false
+      isActive: false
     },
     {
       value: '专栏',
-      label: '',
+      label: 'column',
       children: [],
-      isAcitve: false
+      isActive: false
     },
   ];
+  secondNavList: Array<NavList> = []
 
   switchFirstNav(event: any) {
     let target: any = event.target,
@@ -124,11 +153,11 @@ export default class Nav extends Vue {
       return ;
     }
     for (let i = 0; i < this.$data.firstNavList.length; i++) {
-      this.$data.firstNavList[i].isAcitve = false;
+      this.$data.firstNavList[i].isActive = false;
     }
-    this.$data.firstNavList[index].isAcitve = true;
-
-    this.$data.firstNavList.push(this.$data.firstNavList.pop());
+    this.$router.replace({
+      name: this.$data.firstNavList[index].label
+    })
   }
 }
 </script>
