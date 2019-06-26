@@ -14,7 +14,7 @@
               <h2>暑期训练营</h2>
               <div
                 class="introduce-container"
-              >这个是内容这个是内容这个是内容这个是内容这个是内容这个是内容这个是内容这个是内容这个是内容这个是内容这个是内容这个是内容这个是内容</div>
+              >QG工作室训练营“程序设计及创新实践能力提升班”于每年三月正式开始招生，QG工作室面向全校大一招募大约120名有兴趣、有热诚、有基础的新生，我们采取大组+小组的训练营培训，旨在提高各位新生的程序设计及创新实践能力，在训练营中有连续五周的大组培训，主要培训新生们学习数据结构并实践相关算法，小组培训主要针对各个方向的基础入门内容对新生进行培训。</div>
             </div> 
           </div>
           <div class="card-right">
@@ -35,7 +35,7 @@
               <h2>技术交流会</h2>
               <div
                 class="introduce-container"
-              >这个是内容这个是内容这个是内容这个是内容这个是内容这个是内容这个是内容这个是内容这个是内容这个是内容这个是内容这个是内容这个是内容</div>
+              >技术交流会是QG工作室多年以来的传统，每周一次30分钟～1小时的技术交流会，由来自工作室不同小组的学员担任讲师，分享自己方向上的一些知识体系，拓宽团队成员的视野。</div>
             </div>
           </div>
         </div>
@@ -46,7 +46,7 @@
               <h2>康乐活动</h2>
               <div
                 class="introduce-container"
-              >这个是内容这个是内容这个是内容这个是内容这个是内容这个是内容这个是内容这个是内容这个是内容这个是内容这个是内容这个是内容这个是内容</div>
+              >工作室坚持贯彻“全面发展”的理念，在繁忙的学习的过程中每周组织一到两次康乐活动，既锻炼了身体，又加深了我们团队的凝聚力。</div>
             </div>
           </div>
           <div class="card-right">
@@ -144,7 +144,7 @@ export default {
 };
 </script >
 
-<style lang="css" scoped>
+<style  scoped>
 .first-header {
   border: 0.02rem solid #e5e5e5;
   padding: 0.15rem 0;
@@ -156,8 +156,7 @@ export default {
   padding: 0 0.2rem;
 }
 .second-header {
-  margin-top: 0.96rem;
-  margin-bottom: 1.08rem;
+  margin: .96rem auto 1.08rem auto;
 }
 .card {
   display: flex;
