@@ -1,9 +1,12 @@
 <style lang="scss" scoped>
-
+.about-container {
+  position: relative;
+}
 </style>
 
 <template>
   <div class="about-container" id="about">
+    <circleSvg></circleSvg>
     <list
       v-for="(item, index) in aboutList"
       :key="item.id"
@@ -20,11 +23,13 @@ import Vue from 'vue'
 import Component from 'vue-class-component'
 import { Provide, Prop } from 'vue-property-decorator'
 import list from './list/list.vue'
-import { AboutList } from '@/utils/models/interface';
+import { AboutList } from '@/utils/models/interface'
+import circleSvg from './circle/circle.vue'
 
 @Component({
   components: {
-    list
+    list,
+    circleSvg
   }
 })
 export default class Nav extends Vue {

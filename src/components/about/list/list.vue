@@ -62,7 +62,7 @@ import { Provide } from 'vue-property-decorator'
 @Component({
   props: {
     title: String,
-    message: String,
+    message: Array,
     url: String
   }
 })
