@@ -15,14 +15,14 @@
           </div>
           <div class="card-right">
             <div class="img-container">
-               <img src="../../assets/images/2.jpg" alt>
+               <img src="../../assets/images/column/characteristic/camp.jpg" alt>
             </div>
           </div>
         </div>
         <div class="card">
           <div class="card-left">
             <div class="img-container">
-               <img src="../../assets/images/2.jpg" alt>
+               <img src="../../assets/images/column/characteristic/tech.jpg" alt>
             </div>
           </div>
           <div class="card-right">
@@ -47,7 +47,7 @@
           </div>
           <div class="card-right">
             <div class="img-container">
-               <img src="../../assets/images/2.jpg" alt>
+               <img src="../../assets/images/column/characteristic/activity.jpg" alt>
             </div>
           </div>
         </div>
@@ -57,16 +57,27 @@
         <div class="part-2-left">
           <div class="card-2">
             <div class="card-2-img-container">
-              <img src="../../assets/images/2.jpg" alt>
+              <img src="../../assets/images/column/importantevent/2005.9.jpg" alt>
             </div>
             <div class="time-container">
-              2005.X.X
+              2005年9月
             </div>
             <div class="part-2-content-container">
-              <p>这个是内容这个是内容这个是内容这个是内容这个是内容这个是内容这个是内容这个是内容这个是内容这个是内容这个是内容这个是内容这个是内容</p>
+              <p>QG工作室成立</p>
             </div>
           </div>
           <div class="card-2">
+            <div class="card-2-img-container">
+              <img src="../../assets/images/column/importantevent/2015.7.jpg" alt>
+            </div>
+            <div class="time-container">
+              2015年7月
+            </div>
+            <div class="part-2-content-container">
+              <p>为广工大首次获得了第十四届“挑战杯”国赛“特等奖”</p>
+            </div>
+          </div>
+          <!-- <div class="card-2">
             <div class="card-2-img-container">
               <img src="../../assets/images/2.jpg" alt>
             </div>
@@ -76,18 +87,7 @@
             <div class="part-2-content-container">
               <p>这个是内容这个是内容这个是内容这个是内容这个是内容这个是内容这个是内容这个是内容这个是内容这个是内容这个是内容这个是内容这个是内容</p>
             </div>
-          </div>
-          <div class="card-2">
-            <div class="card-2-img-container">
-              <img src="../../assets/images/2.jpg" alt>
-            </div>
-            <div class="time-container">
-              2005.X.X
-            </div>
-            <div class="part-2-content-container">
-              <p>这个是内容这个是内容这个是内容这个是内容这个是内容这个是内容这个是内容这个是内容这个是内容这个是内容这个是内容这个是内容这个是内容</p>
-            </div>
-          </div>
+          </div> -->
         </div>
         <div class="timeline-container">
           <div class="start"></div>
@@ -100,24 +100,24 @@
         <div class="part-2-right">
           <div class="card-2">
             <div class="card-2-img-container">
-              <img src="../../assets/images/2.jpg" alt>
+              <img src="../../assets/images/column/importantevent/2011.10.jpg" alt>
             </div>
             <div class="time-container">
-              2005.X.X
+              2011年10月
             </div>
             <div class="part-2-content-container">
-              <p>asdasd asd as</p>
+              <p>为广工大首次获得了第十二届“挑战杯”国赛“一等奖”</p>
             </div>
           </div>
           <div class="card-2">
             <div class="card-2-img-container">
-              <img src="../../assets/images/2.jpg" alt>
+              <img src="../../assets/images/column/importantevent/2018.8.jpg" alt>
             </div>
             <div class="time-container">
-              2005.X.X
+              2018年8月
             </div>
             <div class="part-2-content-container">
-              <p>这个是内容这个是内容这个是内容这个是内容这个是内容这个是内容这个是内容这个是内容这个是内容这个是内容这个是内容这个是内容这个是内容</p>
+              <p>颁获“大学生小平科技创新团队”荣誉称号</p>
             </div>
           </div>
         </div>
@@ -125,20 +125,16 @@
     </main>
     <footer class="footer">
       <p>QG十五年，从未停步</p>
-      <div class="backtotop-button">
-        <img src="../../assets/icons/up.png" alt>
-      </div>
+        <backToTopee-button>
+          
+        </backToTopee-button>
     </footer>
   </div>
 </template>
 
 
-<script>
-export default {
-  name: "column",
-  data: {}
-};
-</script >
+
+
 
 <style  scoped>
 .first-header {
@@ -240,7 +236,7 @@ export default {
   
 }
 .line {
-  height: 21.45rem;
+  height: 17rem;
   background-color: #707070;
   width: .04rem;
   margin: 0 auto;
@@ -301,3 +297,21 @@ export default {
 }
 </style>
 
+
+<script lang="ts">
+import Vue from 'vue'
+import Component from 'vue-class-component'
+import BackToTopButton from './backToTopButton.vue'
+
+@Component({
+  components: {
+    'backToTopee-button': BackToTopButton
+  }
+})
+
+export default class column extends Vue {
+  mouted() {
+    
+  }
+}
+</script>
