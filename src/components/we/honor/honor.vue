@@ -23,9 +23,9 @@
       :honorName="'第十二届“挑战杯”全国大学生课外学术科技竞赛一等奖'"
       :honorTime="'2011年10月'"
       :imgList="[
-        require('@/assets/images/we/8.png'),
-        require('@/assets/images/we/9.jpg'),
-        require('@/assets/images/we/9.jpg'),
+        require('@/assets/images/we/10.jpg'),
+        require('@/assets/images/we/11.jpg'),
+        require('@/assets/images/we/11.jpg'),
       ]"
       :honorIntro="'广东工业大学QG工作室学生陈伯宁、黄灿峰、郑亮松、陈培才、张泽环同学的作品《便携式多功能数据拷贝机》在第十二届“挑战杯”全国大学生课外学术科技作品竞赛中荣获一等奖！'"
     ></setType1>
@@ -33,8 +33,7 @@
       :honorName="'第十二届“挑战杯”全国大学生课外学术科技竞赛一等奖'"
       :honorTime="'2011年10月'"
       :imgList="[
-        require('@/assets/images/we/8.png'),
-        require('@/assets/images/we/9.jpg'),
+        require('@/assets/images/we/8.jpg'),
         require('@/assets/images/we/9.jpg'),
       ]"
       :honorIntro="'广东工业大学QG工作室学生陈伯宁、黄灿峰、郑亮松、陈培才、张泽环同学的作品《便携式多功能数据拷贝机》在第十二届“挑战杯”全国大学生课外学术科技作品竞赛中荣获一等奖！'"
@@ -43,11 +42,9 @@
       :honorName="'第十二届“挑战杯”全国大学生课外学术科技竞赛一等奖'"
       :honorTime="'2011年10月'"
       :imgList="[
-        require('@/assets/images/we/8.png'),
-        require('@/assets/images/we/9.jpg'),
-        require('@/assets/images/we/9.jpg'),
+        require('@/assets/images/we/12.png'),
       ]"
-      :honorIntro="'广东工业大学QG工作室学生陈伯宁、黄灿峰、郑亮松、陈培才、张泽环同学的作品《便携式多功能数据拷贝机》在第十二届“挑战杯”全国大学生课外学术科技作品竞赛中荣获一等奖！'"
+      :honorIntro="'QG工作室作品《智慧型酒店服务系统》于2015年7月在第十四届“挑战杯”全国大学生课外学术科技作品竞赛“只会城市”专项赛荣获特等奖！'"
     ></setType3>
   </div>
 </template>

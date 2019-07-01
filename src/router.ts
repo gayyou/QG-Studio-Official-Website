@@ -15,7 +15,7 @@ export default new Router({
   base: process.env.BASE_URL,
   routes: [
     {
-      path: '/',
+      path: '/index',
       name: 'index',
       component: about
     },

@@ -92,7 +92,9 @@
         >{{ item.value }}</li>
       </nav>
     </div>
-    <div class="nav-second-container">
+    <div class="nav-second-container" @click="switchSecNav" 
+      v-if="secondNavList.length"
+    >
       <nav class="nav-list-container">
         <li
           v-if="secondNavList.length"
@@ -130,19 +132,19 @@ export default class Nav extends Vue {
       children: [
         {
           value: '指导老师',
-          label: '',
+          label: 'advisor',
           children: [],
           isActive: false
         },
         {
           value: '研究方向',
-          label: '',
+          label: 'direction',
           children: [],
           isActive: false
         },
         {
           value: '最近的荣誉',
-          label: '',
+          label: 'honors',
           children: [],
           isActive: false
         }
@@ -173,13 +175,13 @@ export default class Nav extends Vue {
       children: [
         {
           value: 'QG特色',
-          label: '',
+          label: 'characteristic',
           children: [],
           isActive: false
         },
         {
           value: 'QG大事记',
-          label: '',
+          label: 'importantEvent',
           children: [],
           isActive: false
         }
@@ -187,7 +189,24 @@ export default class Nav extends Vue {
       isActive: false
     },
   ];
-  secondNavList: Array<NavList> = []
+  secondNavList: Array<NavList> = [];
+
+  firstIndex = 0;
+
+  secondIndex = 0;
+
+  mounted() {
+    let path = window.location.pathname.slice(1);
+    for (let i = 0; i < this.$data.firstNavList.length; i++) {
+      if (this.$data.firstNavList[i].label == path) {
+        let childList = this.$data.firstNavList[i].children;
+
+        for(let j = 0; j < childList.length; j++) {
+          this.$data.secondNavList.push(childList[j]);
+        }
+      }
+    }
+  }
 
   switchFirstNav(event: any) {
     let target: any = event.target,
@@ -204,14 +223,41 @@ export default class Nav extends Vue {
     this.$data.secondNavList = [];
 
     let childList = this.$data.firstNavList[index].children;
+
     for(let i = 0; i < childList.length; i++) {
       this.$data.secondNavList.push(childList[i]);
     }
+
+    if (childList.length) {
+      this.$data.secondNavList[0].isActive = true;
+
+      // 进行页面跳转
+      this.$router.replace({
+        path: this.$data.firstNavList[index].label + '?' + this.$data.secondNavList[0].label,
+        // name: this.$data.firstNavList[index].label
+      });
+    } else {
+      this.$router.replace({
+        path: this.$data.firstNavList[index].label
+        // name: this.$data.firstNavList[index].label
+      });
+    }
+  }
+
+  switchSecNav(event: any) {
+    let index = event.target.getAttribute('data-index');
     
-    // 进行页面跳转
-    this.$router.replace({
-      name: this.$data.firstNavList[index].label
-    });
+    if (!index) {
+      return ;
+    }
+
+    for (let i = 0; i < this.$data.secondNavList.length; i++) {
+      this.$data.secondNavList[i].isActive = false;
+    }
+
+    this.$data.secondNavList[index].isActive = true;
+    let t = $('#' + this.$data.secondNavList[index].label).offset() || { top: 0 };
+    this.$root.$children[0].$refs['scrollbar'].wrap.scrollTop = t.top
   }
 }
 </script>

@@ -28,7 +28,7 @@
 
 <template>
   <div id="app">
-    <el-scrollbar style="height: 100vh;width: 100%;">
+    <el-scrollbar ref="scrollbar" style="height: 100vh;width: 100%;">
       <nav-list></nav-list>
       <router-view></router-view>
       <page-footer class="footer"></page-footer>
@@ -50,6 +50,7 @@ import pageFooter from './components/pageFooter/pageFooter.vue'
 })
 export default class App extends Vue {
   mouted() {
+    // console.log(this.$refs['scrollbar'])
     // document.getElementsByClassName('el-scrollbar__wrap')[0].style.overflowX = 'hidden';
   }
 }

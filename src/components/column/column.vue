@@ -1,11 +1,7 @@
 <template>
   <div>
-    <header class="first-header">
-      <a href id="characteristic">QG特色</a>
-      <a href id="importantEvent">QG大事件</a>
-    </header>
     <main>
-      <h1 class="second-header">QG特色</h1>
+      <h1 class="second-header" id="characteristic">QG特色</h1>
       <section class="part-1">
         <div class="card">
           <div class="card-left">
@@ -56,7 +52,7 @@
           </div>
         </div>
       </section>
-      <h1 class="second-header">QG大事件</h1>
+      <h1 class="second-header" id="importantEvent">QG大事件</h1>
       <section class="part-2">
         <div class="part-2-left">
           <div class="card-2">
