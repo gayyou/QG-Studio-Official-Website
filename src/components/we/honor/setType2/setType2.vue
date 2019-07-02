@@ -21,12 +21,18 @@
     .left-top {
       width: 100%;
       height: 5.3rem;
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
     }
 
     .left-bottom {
       margin-top: 0.4rem;
       width: 100%;
       height: 5.3rem;
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
     }
 
     img {
@@ -83,11 +89,11 @@
 <template>
   <div class="setType2-container">
     <div class="section-left">
-      <div class="left-top">
-        <img :src="imgList[0]" alt="">
+      <div class="left-top"  :style="'background-image: url(' + imgList[0] + ')'">
+        <!-- <img :src="imgList[0]" alt=""> -->
       </div>
-      <div class="left-bottom">
-        <img :src="imgList[1]" alt="">
+      <div class="left-bottom"  :style="'background-image: url(' + imgList[1] + ')'">
+        <!-- <img :src="imgList[1]" alt=""> -->
       </div>
     </div>
     <div class="section-right">

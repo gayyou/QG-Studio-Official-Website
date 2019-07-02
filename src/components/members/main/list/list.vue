@@ -3,8 +3,8 @@
   margin-top: 0.36rem;
   margin-left: 0.64rem;
   position: relative;
-  width: 4rem;
-  height: 3.6rem;
+  width: 3.6rem;
+  height: 4rem;
   box-shadow: 0 2px 2px 2px rgba($color: #000000, $alpha: .1);
   overflow: hidden;
 
@@ -14,7 +14,7 @@
     height: 1.6rem;
     border-radius: 50%;
     overflow: hidden;
-    margin: 0.32rem auto;
+    margin: 0.4rem auto;
     border: 0.5px solid rgba($color: #000000, $alpha: .16);
 
     img {

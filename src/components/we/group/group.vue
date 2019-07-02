@@ -137,6 +137,7 @@
     font-size: 0.24rem;
     color: #707070;
     line-height: 0.36rem;
+    height: 1rem;
     width: 80%;
     margin: 0.48rem auto;
   }
@@ -177,10 +178,10 @@ export default class Group extends Vue {
   groupList: Array<Object> = [
     {
       name: '图形组',
-      intro: '手游组的研究方向为计算机图形学与数字媒体技术。小组以DirectX 11作为学习 方向，使用Direct3D 11开发游戏及其他智能图形程序。除此之外，小组使用Unity3D游戏引擎开发多平台游戏以及体感应用。游戏制作涉及数据库开发、网络编程，以及GPU编程等等。',
+      intro: '图形渲染组（前身手游组）的研究方向为计算机图形学与AR/VR开发。小组以DirectX、Unity3D作为主要学习方向，DirectX用于理解底层图形渲染原理，Unity3D引擎用于开发AR/VR应用程序、仿真平台以及其他交互式媒体应用程序。',
       url: require('@/assets/icons/image.png'),
       activeUrl: require('@/assets/icons/image_small.png'),
-      className: 'status-0',
+      className: 'status-7',
       fromColor: '#EC502C',
       toColor: '#D67557'
     },
@@ -240,7 +241,7 @@ export default class Group extends Vue {
     },
     {
       name: '图形组',
-      intro: '手游组的研究方向为计算机图形学与数字媒体技术。小组以DirectX 11作为学习 方向，使用Direct3D 11开发游戏及其他智能图形程序。除此之外，小组使用Unity3D游戏引擎开发多平台游戏以及体感应用。游戏制作涉及数据库开发、网络编程，以及GPU编程等等。',
+      intro: '图形渲染组（前身手游组）的研究方向为计算机图形学与AR/VR开发。小组以DirectX、Unity3D作为主要学习方向，DirectX用于理解底层图形渲染原理，Unity3D引擎用于开发AR/VR应用程序、仿真平台以及其他交互式媒体应用程序。',
       url: require('@/assets/icons/image.png'),
       activeUrl: require('@/assets/icons/image_small.png'),
       className: 'status-7',

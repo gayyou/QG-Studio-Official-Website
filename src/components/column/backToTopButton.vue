@@ -17,8 +17,9 @@
 
 <script lang="ts">
 import Vue from 'vue'
+import Component from 'vue-class-component';
 
-
+@Component
 export default class BackToTopButton extends Vue {
   index: Number = 0;
     

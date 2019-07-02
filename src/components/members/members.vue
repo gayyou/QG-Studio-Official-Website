@@ -7,8 +7,8 @@
 
 <template>
   <div class="members-container">
-    <navs></navs>
-    <mains></mains>
+    <navs @year="watchYear" :year="year"></navs>
+    <mains :year="year"></mains>
   </div>
 </template>
 
@@ -17,6 +17,7 @@ import Vue from 'vue'
 import Component from 'vue-class-component';
 import navs from './nav/nav.vue'
 import mains from './main/main.vue'
+import { Watch } from 'vue-property-decorator';
 
 @Component({
   components: {
@@ -25,6 +26,14 @@ import mains from './main/main.vue'
   }
 })
 export default class Members extends Vue {
-  
+  year: String = ''
+
+  mounted() {
+    this.$data.year = '全部'
+  }
+
+  watchYear(newVal: String) {
+    this.$data.year = newVal
+  }
 }
 </script>
