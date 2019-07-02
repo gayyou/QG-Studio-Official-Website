@@ -3,7 +3,7 @@
     <main>
       <div class="item">
         <div class="item-img">
-          <img src="../../assets/images/2.jpg" alt="">
+          <img src="../../assets/images/projects/sleep.png" alt="">
         </div>
         <h1 class="item-title">
           智能睡眠监护枕头
@@ -16,19 +16,23 @@
       </div>
       <div class="item">
         <div class="item-img">
-          <img src="../../assets/images/2.jpg" alt="">
+          <img src="../../assets/images/projects/whale.png" alt="">
         </div>
         <h1 class="item-title">
           “守护鲸鱼”计划游戏
         </h1>
         <p>
-          这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介
+          随着社会的发展，现代信息传播媒介日渐趋于多元化，除了传统媒介（报纸、海报、电视广告等），还诞生了许多新型媒介（公众号、自媒体、游戏等等），然而，新型媒介的影响范围可能比传统媒介的要广泛得多，已经日渐成为人们获取信息的主要渠道。
+公益宣传原本大多数是通过传统媒介进行的，其对于被宣传者来说，感受较为单一。我们的作品扩充了公益宣传的宣传渠道，利用游戏宣传鲸鱼保护，目的是让玩家亲身参与到模拟的公益行动中来，让玩家能有更多方位的感受，以达到更好的公益宣传效果。
+同时，当前海洋生态问题日渐严峻，某些鲸鱼种群数量正在面临生存威胁。然而，在这个现状下，仍然存在着捕鲸业，这使得某些鲸鱼种群数量锐减，引发物种危机。我们必须更多地宣传鲸鱼保护，抵制捕鲸行为。
+我们设计的项目是一款模拟“海洋守护者协会”的船只妨碍捕鲸船进行捕鲸行为的游戏。该游戏具有一定的公益宣传性质，同时还得有一定的趣味性，能够让玩家在游戏中得到乐趣的同时，激发玩家对鲸鱼保护的思考，继而引发玩家对海洋保护的思考。同时呼吁大家拒绝鲸制品，保护鲸鱼和海洋生态，没有买卖就没有杀害。
+
           
         </p>
       </div>
       <div class="item">
         <div class="item-img">
-          <img src="../../assets/images/2.jpg" alt="">
+          <img src="../../assets/images/projects/edu.png" alt="">
         </div>
         <h1 class="item-title">
           面向前端的创客教育平台
@@ -40,7 +44,7 @@
       </div>
       <div class="item">
         <div class="item-img">
-          <img src="../../assets/images/2.jpg" alt="">
+          <img src="../../assets/images/projects/game.png" alt="">
         </div>
         <h1 class="item-title">
           “单词消消乐”游戏
@@ -51,7 +55,7 @@
       </div>
       <div class="item item-2">
         <div class="item-img">
-          <img src="../../assets/images/2.jpg" alt="">
+          <img src="../../assets/images/projects/blind.png" alt="">
         </div>
         <h1 class="item-title">
           盲人出行辅助设备
@@ -64,18 +68,18 @@
       </div>
       <div class="item">
         <div class="item-img">
-          <img src="../../assets/images/2.jpg" alt="">
+          <img src="../../assets/images/projects/power.jpg" alt="">
         </div>
         <h1 class="item-title">
           智能家居排插
         </h1>
         <p>
-          asdlkasjdlkasjlkdjaklsdjkl
+          随着21世纪的到来，经济科技发展越来越快，为了满足人们的生活需求，各种各样的用电器也越来越多，然而，如何管理这些用电器却是一个难题。面对如此众多的家庭电器，用户无法得知用电器的使用情况（包括耗电量、使用状态、故障情况等）。针对这些问题，本文提出了以排插为硬件载体、有利于控制监测家庭用电的监督管理系统，其包括一个新型的智能排插，以及配套使用的微信小程序终端，并且对节能推荐的实现做了详细的算法设计分析与研究。本方案所研制的家庭用电智能监督管理系统不仅能够实时监测用电器的使用情况，还能查看过去用电量、预测未来用电量、轻松控制各类家电的开关、给出人性化的节能推荐，为用户提供了家电使用新体验。在此方案中，智能排插以STM32智能控制器为核心，分别控制与监测各个插口，形成了一个能够控制开关、采集数据、发送数据的智能设备。上层终端接收智能控制器反馈的状态数据，形成可视化界面供以用户进行操控。我们所做的节能推荐方案研究，使用户更轻松地管理和监测用电器，并能得到更好的节能推荐，这将给用户带来很大的便利，而且这符合当今的节能减排倡导，具有很好的市场发展前景
         </p>
       </div>
       <div class="item">
         <div class="item-img">
-          <img src="../../assets/images/2.jpg" alt="">
+          <img src="../../assets/images/projects/face.jpg" alt="">
         </div>
         <h1 class="item-title">
           颜值评估系统
@@ -85,7 +89,7 @@
 此外，它还能够搜寻人脸数据库，匹配出最相似的明星脸(或武侠脸)，获取两者之间的一个过渡图像并打印出来。它可以满足人们对自身外貌的审美需求，在社交娱乐市场具有一定潜力。
         </p>
       </div>
-      <div class="item item-3">
+      <!-- <div class="item item-3">
         <div class="item-img">
           <img src="../../assets/images/2.jpg" alt="">
         </div>
@@ -96,8 +100,8 @@
           asdlkasjdlkasjlkdjaklsdjkl
         </p>
       </div>
-      <div class="item">
-        <div class="item-img">
+      <div class="item"> -->
+        <!-- <div class="item-img">
           <img src="../../assets/images/2.jpg" alt="">
         </div>
         <h1 class="item-title">
@@ -106,27 +110,25 @@
         <p>
           asdlkasjdlkasjlkdjaklsdjkl
         </p>
-      </div>
+      </div> -->
       <div class="item item-4">
         <div class="content-container">
           <h1 class="item-title">
             矿工帽
           </h1>
-          <p>
-            asdlkasjdlkasjlkdjaklsdjkl
+          <p style="height: 5rem;">
+            本项目致力于为备受世界国家关注的封闭空间环境下的安全问题提供一套解决方案。该方案为：以嵌入式设备为载体，通过自主设计的通信基站进行信号的链接、定位的校准，对穿戴者进行实时摔倒检测以及封闭空间内的精准定位，同时，部分通信基站结合了多传感器，对封闭空间内的气体质量进行评估、分析，并将多元信息进行3D建模，通过Unity 3D引擎技术显示出来，通过数据的可视化、摔倒检测、气体评估、封闭空间内的定位保证封闭空间的安全以及内部作业工人的人身安全。该智能穿戴设备基于六轴传感器的人体运动状态识别算法，利用卡尔曼滤波算法分析出人体稳定状态与异常状态。同时通过提取超重加速度、倾斜角度、静止时间等参数，进一步确保能够正确及时检测穿戴者状态。为了方便能够实时保护佩戴者，我们将气体模块采集到的数据通过GPRS模块传输到移动APP端。，佩戴者或者他人可以通过该APP查看到气体情况。当检测到佩戴者出现跌倒意外事故或者气体有毒的时候，我们会借助之前构建的定位系统，将定位信息以及急救相关信息传输到指定APP端及云服务器中，并触发移动APP端产生报警操作。在黄金时间内抢救工作人员。
           </p>
         </div>
         <div class="item-img">
-          <img src="../../assets/images/2.jpg" alt="">
+          <img src="../../assets/images/projects/helmet.png" alt="">
         </div>
       </div>
       
       
     </main>
     <footer class="footer">
-      <div class="backtotop-button">
-        <img src="../../assets/icons/up.png" alt>
-      </div>
+      <backToTopee-button></backToTopee-button>
     </footer>
     <!-- <project-mask></project-mask> -->
   </div>
@@ -137,10 +139,13 @@
 import Vue from 'vue'
 import Component from 'vue-class-component'
 import Mask from './mask.vue'
+import BackToTopButton from '../nav/backToTopButton.vue'
+
 
 @Component({
   components: {
-    'project-mask': Mask
+    'project-mask': Mask,
+    'backToTopee-button': BackToTopButton
   }
 })
 export default class Projects extends Vue {
@@ -184,7 +189,8 @@ main {
   color: #707070;
   overflow: hidden;
   height: 3.4rem;
-}
+
+} 
 
 .item-2 {
   width: 7.68rem;

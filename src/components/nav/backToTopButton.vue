@@ -5,23 +5,28 @@
   height: 0.85rem;
   border-radius: 50%;
   box-shadow: 1px 2px 6px 1px #c7c1c1;
+  cursor: pointer;
 }
 </style>
 
 
 <template>
-    <div class="backtotop-button">
+    <div class="backtotop-button" @click="move">
         <img src="../../assets/icons/up.png" alt>
     </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
-import Component from 'vue-class-component';
+import Component from 'vue-class-component'
 
-@Component
+@Component({
+
+})
+
 export default class BackToTopButton extends Vue {
-  index: Number = 0;
-    
+  move() {
+    this.$root.$children[0].$refs['scrollbar'].wrap.scrollTop = 0;
+  }
 }
 </script>
