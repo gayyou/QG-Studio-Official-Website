@@ -301,7 +301,7 @@
 <script lang="ts">
 import Vue from 'vue'
 import Component from 'vue-class-component'
-import BackToTopButton from './backToTopButton.vue'
+import BackToTopButton from '../nav/backToTopButton.vue'
 
 @Component({
   components: {

@@ -3,7 +3,7 @@
     <main>
       <div class="item">
         <div class="item-img">
-          <img src="../../assets/images/2.jpg" alt="">
+          <img src="../../assets/images/pojects/sleep.png" alt="">
         </div>
         <h1 class="item-title">
           智能睡眠监护枕头
@@ -28,7 +28,7 @@
       </div>
       <div class="item">
         <div class="item-img">
-          <img src="../../assets/images/2.jpg" alt="">
+          <img src="../../assets/images/pojects/edu.png" alt="">
         </div>
         <h1 class="item-title">
           面向前端的创客教育平台
@@ -40,7 +40,7 @@
       </div>
       <div class="item">
         <div class="item-img">
-          <img src="../../assets/images/2.jpg" alt="">
+          <img src="../../assets/images/pojects/game.png" alt="">
         </div>
         <h1 class="item-title">
           “单词消消乐”游戏
@@ -51,7 +51,7 @@
       </div>
       <div class="item item-2">
         <div class="item-img">
-          <img src="../../assets/images/2.jpg" alt="">
+          <img src="../../assets/images/pojects/blind.png" alt="">
         </div>
         <h1 class="item-title">
           盲人出行辅助设备
@@ -64,18 +64,18 @@
       </div>
       <div class="item">
         <div class="item-img">
-          <img src="../../assets/images/2.jpg" alt="">
+          <img src="../../assets/images/pojects/power.jpg" alt="">
         </div>
         <h1 class="item-title">
           智能家居排插
         </h1>
         <p>
-          asdlkasjdlkasjlkdjaklsdjkl
+          随着21世纪的到来，经济科技发展越来越快，为了满足人们的生活需求，各种各样的用电器也越来越多，然而，如何管理这些用电器却是一个难题。面对如此众多的家庭电器，用户无法得知用电器的使用情况（包括耗电量、使用状态、故障情况等）。针对这些问题，本文提出了以排插为硬件载体、有利于控制监测家庭用电的监督管理系统，其包括一个新型的智能排插，以及配套使用的微信小程序终端，并且对节能推荐的实现做了详细的算法设计分析与研究。本方案所研制的家庭用电智能监督管理系统不仅能够实时监测用电器的使用情况，还能查看过去用电量、预测未来用电量、轻松控制各类家电的开关、给出人性化的节能推荐，为用户提供了家电使用新体验。在此方案中，智能排插以STM32智能控制器为核心，分别控制与监测各个插口，形成了一个能够控制开关、采集数据、发送数据的智能设备。上层终端接收智能控制器反馈的状态数据，形成可视化界面供以用户进行操控。我们所做的节能推荐方案研究，使用户更轻松地管理和监测用电器，并能得到更好的节能推荐，这将给用户带来很大的便利，而且这符合当今的节能减排倡导，具有很好的市场发展前景
         </p>
       </div>
       <div class="item">
         <div class="item-img">
-          <img src="../../assets/images/2.jpg" alt="">
+          <img src="../../assets/images/pojects/face.jpg" alt="">
         </div>
         <h1 class="item-title">
           颜值评估系统
@@ -124,9 +124,7 @@
       
     </main>
     <footer class="footer">
-      <div class="backtotop-button">
-        <img src="../../assets/icons/up.png" alt>
-      </div>
+      <backToTopee-button></backToTopee-button>
     </footer>
     <!-- <project-mask></project-mask> -->
   </div>
@@ -137,10 +135,13 @@
 import Vue from 'vue'
 import Component from 'vue-class-component'
 import Mask from './mask.vue'
+import BackToTopButton from '../nav/backToTopButton.vue'
+
 
 @Component({
   components: {
-    'project-mask': Mask
+    'project-mask': Mask,
+    'backToTopee-button': BackToTopButton
   }
 })
 export default class Projects extends Vue {
@@ -184,7 +185,8 @@ main {
   color: #707070;
   overflow: hidden;
   height: 3.4rem;
-}
+
+} 
 
 .item-2 {
   width: 7.68rem;
