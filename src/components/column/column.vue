@@ -311,7 +311,6 @@ import BackToTopButton from '../nav/backToTopButton.vue'
 
 export default class column extends Vue {
   mouted() {
-    
   }
 }
 </script>
