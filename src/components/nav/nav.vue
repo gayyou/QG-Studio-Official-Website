@@ -111,7 +111,7 @@
 <script lang="ts">
 import Vue from 'vue'
 import Component from 'vue-class-component'
-import { Provide } from 'vue-property-decorator'
+import { Provide, Watch } from 'vue-property-decorator'
 import { NavList } from '../../utils/models/interface'
 // import {} from 'element-ui'
 
@@ -125,7 +125,7 @@ export default class Nav extends Vue {
       value: '关于QG',
       label: 'about',
       children: [],
-      isActive: true
+      isActive: false
     },
     {
       value: '我们',
@@ -169,6 +169,12 @@ export default class Nav extends Vue {
       label: 'honors',
       children: [
         {
+          value: '奖项',
+          label: 'awards',
+          children: [],
+          isActive: false
+        },
+        {
           value: '专利',
           label: 'copyright',
           children: [],
@@ -205,13 +211,17 @@ export default class Nav extends Vue {
   ];
   secondNavList: Array<NavList> = [];
 
-  firstIndex = 0;
+  firstIndex = -1;
 
   secondIndex = 0;
 
   mounted() {
     let path = window.location.pathname.slice(1);
     for (let i = 0; i < this.$data.firstNavList.length; i++) {
+      if (path == this.$data.firstNavList[i].label) {
+        this.$data.firstIndex = i;
+      }
+
       if (this.$data.firstNavList[i].label == path) {
         let childList = this.$data.firstNavList[i].children;
 
@@ -219,6 +229,10 @@ export default class Nav extends Vue {
           this.$data.secondNavList.push(childList[j]);
         }
       }
+    }
+
+    if (this.$data.firstIndex == -1) {
+      this.$data.firstIndex = 0;
     }
   }
 
@@ -277,6 +291,14 @@ export default class Nav extends Vue {
     const ref = <any>this.$root.$children[0].$refs['scrollbar']  // 强制类型转换
     ref.wrap.scrollTop = t.top;
     // console.log(this.$root.$children[0].$refs['scrollbar'])
+  }
+
+  @Watch('firstIndex')
+  firstHandel(newVal) {
+    for (let i = 0; i< this.$data.firstNavList; i++) {
+      this.$data.firstNavList[i].isActive = false;
+    }
+    this.$data.firstNavList[newVal].isActive = true;
   }
 }
 </script>

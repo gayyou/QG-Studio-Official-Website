@@ -93,7 +93,7 @@ export default class Main extends Vue {
       year: '2017',
       name: '郑伟滨',
       group: '前端组',
-      url: ''
+      url: require('@/assets/images/members/zwb.jpg')
     },
     {
       year: '2017',
@@ -166,6 +166,18 @@ export default class Main extends Vue {
       name: '陈浚丰',
       group: '图形组',
       url: require('@/assets/images/members/cjf.png')
+    },
+    {
+      year: '2017',
+      name: '杨浩',
+      group: '数据挖掘组',
+      url: require('@/assets/images/members/yh.png')
+    },
+    {
+      year: '2017',
+      name: '钟希宇',
+      group: '设计师组',
+      url: require('@/assets/images/members/zxy.jpg')
     }
   ];
 

@@ -11,7 +11,8 @@ export const routerOptions: any = {
     'characteristic'
   ],
   honors: [
-
+    'awards',
+    
   ],
   index: [
 

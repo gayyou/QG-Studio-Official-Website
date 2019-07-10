@@ -18,5 +18,9 @@ export interface AboutList {
   // 信息
   message: Array<String>;
   // 主键
-  id: String
+  id: String;
+
+  height: Number;
+
+  position: String;
 }

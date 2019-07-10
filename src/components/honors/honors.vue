@@ -14,6 +14,7 @@
 
 <template>
   <div class="honors-container">
+    <awards id="awards"></awards>
     <copyright id="copyright"></copyright>
     <software id="software"></software>
   </div>
@@ -24,11 +25,13 @@ import Vue from 'vue'
 import Component from 'vue-class-component';
 import copyright from './copyright/copyright.vue';
 import software from './software/software.vue';
+import awards from './awards/awards.vue';
 
 @Component({
   components: {
     copyright,
-    software
+    software,
+    awards
   }
 })
 export default class Honors extends Vue{

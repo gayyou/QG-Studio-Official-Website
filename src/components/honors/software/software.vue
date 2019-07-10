@@ -1,43 +1,68 @@
 <style lang="scss" scoped>
-.copyright-container {
-  position: relative;
-  width: 100%;
-  margin-top: 0.4rem;
-  padding-bottom: 0.6rem;
-
-  .title {
-    font-size: 0.36rem;
-    color: #2a2a2a;
-  }
-
-  .copyright-list-container {
-    position: relative;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    flex-flow: row wrap;
-  }
-}
-
-.copyright-container::after {
+%clear-both::after {
   content: "";
   display: block;
   clear: both;
 }
+
+.award-container {
+  @extend %clear-both;
+
+  position: relative;
+  width: 100%;
+  margin-bottom: .5rem;
+  overflow: hidden;
+  text-align: start;
+  padding-bottom: 0.4rem;
+
+  .title {
+    display: block;
+    margin-top: 0.4rem;
+    font-size: 0.36rem;
+    color: #2a2a2a;
+    text-align: center;
+  }
+
+  .header {
+    width: 100%;
+    height: 1.28rem;
+    display: flex;
+    justify-content: center;
+
+    span {
+      display: block;
+      font-size: .24rem;
+      height: 1.28rem;
+      line-height: 1.28rem;
+      color: #707070;
+    }
+    .award-main {
+      @extend %clear-both;
+
+      position: relative;
+      width: 100%;
+    }
+  }
+}
 </style>
 
 <template>
-  <div class="copyright-container">
-    <!-- <layer></layer> -->
+  <div class="award-container">
     <span class="title">软件著作权</span>
-    <div class="copyright-list-container">
-      <list
-        v-for="(item, index) in list"
-        :key="index + 1"
-        :data-index="index"
-        :url="item.url"
-        :name="item.name"
-      ></list>
+    <div class="header">
+      <span
+        v-for="(item) in headerList"
+        :key="item.value"
+        :style="'width: ' + item.width + 'rem;'"
+      >{{ item.value }}</span>
+    </div>
+    <div class="award-main">
+    <list
+      v-for="(item, index) in softwareList"
+      :key="index + 1"
+      :index="index + 1"
+      :item="item"
+    ></list>
     </div>
   </div>
 </template>
@@ -55,34 +80,60 @@ import layer from './layer/layer.vue'
   }
 })
 export default class Software extends Vue {
-  list: Array<any> = [
+  headerList: Array<any> = [
     {
-      url: require('@/assets/images/honors/software/1.png'),
-      name: '订单集群打印系统V1.0'
+      width: 2,
+      value: '序号'
     },
     {
-      url: require('@/assets/images/honors/software/2.png'),
-      name: '康复训练及评估平台V1.0'
+      width: 4.5,
+      value: '软件名称'
     },
     {
-      url: require('@/assets/images/honors/software/3.png'),
-      name: '康复训练及评估平台移动管理系统V1.0'
+      width: 4.5,
+      value: '登记号'
     },
     {
-      url: require('@/assets/images/honors/software/4.jpg'),
-      name: '微型打印控制系统V1.0'
+      width: 4.5,
+      value: '发表时间'
+    },
+  ];
+
+  softwareList: any = [
+    {
+      id: '2017SR267145',
+      name: '订单集群打印系统V1.0',
+      time: '2017年03月26日'
     },
     {
-      url: require('@/assets/images/honors/software/5.jpg'),
-      name: '移动订单管理及打印系统V1.0'
+      id: '2017SR385752',
+      name: '康复训练及评估系统V1.0',
+      time: '2017年04月01日'
     },
     {
-      url: require('@/assets/images/honors/software/6.png'),
-      name: '智能急救头盔APP软件V1.0'
+      id: '2017SR385305',
+      name: '康复训练及评估系统移动管理系统',
+      time: '2017年04月01日'
     },
     {
-      url: require('@/assets/images/honors/software/7.png'),
-      name: '智能急救头盔系统V1.0'
+      id: '2017SR274774',
+      name: '微型打印控制系统V1.0',
+      time: '2016年12月31日'
+    },
+    {
+      id: '2017SR274760',
+      name: '移动订单管理及打印系统V1.0',
+      time: '2017年03月16日'
+    },
+    {
+      id: '2017SR288722',
+      name: '智能急救头盔APP软件V1.0',
+      time: '2017年03月16日'
+    },
+    {
+      id: '2017SR287905',
+      name: '智能急救头盔系统V1.0',
+      time: '2017年03月16日'
     }
   ]
 }

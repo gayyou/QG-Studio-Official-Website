@@ -168,7 +168,7 @@ export default class CarouseMap extends Vue {
     },
     {
       url: require('@/assets/images/we/4.jpg'),
-      message: '省教育部部长来我团队参观',
+      message: '广东省政协主席王荣、学校校长陈新听取工作室介绍',
       className: 'slide-right'
     },
     {

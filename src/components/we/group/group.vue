@@ -158,7 +158,7 @@
         :style="index == currentIndex ? 'background: linear-gradient(to top right, ' + item.fromColor + ', ' + item.toColor + ');' : ''"
       >
         <div class="major-icon">
-          <img :src="index != 7 ? item.activeUrl : item.url" alt="">
+          <img :src="index != currentIndex ? item.activeUrl : item.url" alt="">
         </div>
       </li>
     </div>
@@ -176,15 +176,6 @@ import Component from 'vue-class-component';
 @Component
 export default class Group extends Vue {
   groupList: Array<Object> = [
-    {
-      name: '图形组',
-      intro: '图形渲染组（前身手游组）的研究方向为计算机图形学与AR/VR开发。小组以DirectX、Unity3D作为主要学习方向，DirectX用于理解底层图形渲染原理，Unity3D引擎用于开发AR/VR应用程序、仿真平台以及其他交互式媒体应用程序。',
-      url: require('@/assets/icons/image.png'),
-      activeUrl: require('@/assets/icons/image_small.png'),
-      className: 'status-7',
-      fromColor: '#EC502C',
-      toColor: '#D67557'
-    },
     {
       name: '前端组',
       intro: '前端在网络开发中属于呈现给用户的部分，最具有代表性的莫过于传统的网页。前端组一直紧随最前沿的技术脚步，秉承着用户体验至上的原则，完成用户的需求。前端发展至今天，所能完成的任务可不仅仅于此，前端开发者探索的脚步从未停止，我们可以用Node.js进行高性能后端开发。我们创造出挑战原生APP地位的webapp小程序，更可以开发桌面级应用。想你所想，前端的未来将由你来开拓。',
@@ -248,21 +239,30 @@ export default class Group extends Vue {
       fromColor: '#EC502C',
       toColor: '#D67557'
     },
-    {
-      name: '前端组',
-      intro: '前端在网络开发中属于呈现给用户的部分，最具有代表性的莫过于传统的网页。前端组一直紧随最前沿的技术脚步，秉承着用户体验至上的原则，完成用户的需求。前端发展至今天，所能完成的任务可不仅仅于此，前端开发者探索的脚步从未停止，我们可以用Node.js进行高性能后端开发。我们创造出挑战原生APP地位的webapp小程序，更可以开发桌面级应用。想你所想，前端的未来将由你来开拓。',
-      url: require('@/assets/icons/front.png'),
-      activeUrl: require('@/assets/icons/front_small.png'),
-      className: 'status-8',
-      fromColor: '#ED3E46',
-      toColor: '#FD7679'
-    }
+    // {
+    //   name: '图形组',
+    //   intro: '图形渲染组（前身手游组）的研究方向为计算机图形学与AR/VR开发。小组以DirectX、Unity3D作为主要学习方向，DirectX用于理解底层图形渲染原理，Unity3D引擎用于开发AR/VR应用程序、仿真平台以及其他交互式媒体应用程序。',
+    //   url: require('@/assets/icons/image.png'),
+    //   activeUrl: require('@/assets/icons/image_small.png'),
+    //   className: 'status-7',
+    //   fromColor: '#EC502C',
+    //   toColor: '#D67557'
+    // },
+    // {
+    //   name: '前端组',
+    //   intro: '前端在网络开发中属于呈现给用户的部分，最具有代表性的莫过于传统的网页。前端组一直紧随最前沿的技术脚步，秉承着用户体验至上的原则，完成用户的需求。前端发展至今天，所能完成的任务可不仅仅于此，前端开发者探索的脚步从未停止，我们可以用Node.js进行高性能后端开发。我们创造出挑战原生APP地位的webapp小程序，更可以开发桌面级应用。想你所想，前端的未来将由你来开拓。',
+    //   url: require('@/assets/icons/front.png'),
+    //   activeUrl: require('@/assets/icons/front_small.png'),
+    //   className: 'status-8',
+    //   fromColor: '#ED3E46',
+    //   toColor: '#FD7679'
+    // }
   ];
 
-  currentIndex: Number = 4;
+  currentIndex: Number = 3;
 
   classModel: Array<String> = [
-    'status-0',
+    // 'status-0',
     'status-1',
     'status-2',
     'status-3',
@@ -270,7 +270,7 @@ export default class Group extends Vue {
     'status-5',
     'status-6',
     'status-7',
-    'status-8',
+    // 'status-8',
   ]
 
   groupMessage: String = '前端在网络开发中属于呈现给用户的部分，最具有代表性的莫过于传统的网页。前端组一直紧随最前沿的技术脚步，秉承着用户体验至上的原则，完成用户的需求。前端发展至今天，所能完成的任务可不仅仅于此，前端开发者探索的脚步从未停止，我们可以用Node.js进行高性能后端开发。我们创造出挑战原生APP地位的webapp小程序，更可以开发桌面级应用。';
@@ -278,21 +278,29 @@ export default class Group extends Vue {
   groupName: String = '计算机网络与分布式信息系统前端方向';
 
   choiceGroup(event: any) {
-    let index = event.currentTarget.getAttribute('data-index');
+    let index = parseInt(event.currentTarget.getAttribute('data-index'));
     this.$data.currentIndex = index;
     let groupList = this.$data.groupList;
     let classModel = this.$data.classModel;
     for (let i = 0; i < groupList.length; i++) {
       // this.$data.groupList[(index + i) % this.$data.classModel.length].className = this.$data.classModel[(6 + i) % this.$data.classModel.length];
-      groupList[(index + i) % groupList.length].className = classModel[(4 + i) % groupList.length]
+      groupList[(index + i) % groupList.length].className = classModel[(3 + i) % classModel.length]
     }
+    // groupList[index].className = classModel[3];
+    // groupList[(index + 1) % groupList.length].className = classModel[4];
+    // groupList[(index + 2) % groupList.length].className = classModel[5];
+    // groupList[(index + 3) % groupList.length].className = classModel[6];
+    // groupList[(index + 4) % groupList.length].className = classModel[0];
+    // groupList[(index + 5) % groupList.length].className = classModel[1];
+    // groupList[(index + 6) % groupList.length].className = classModel[2];
+    // groupList[(index + 7) % groupList.length].className = classModel[3];
     this.$data.groupMessage = groupList[index].intro;
     this.$data.groupName = groupList[index].name;
   }
 
   mounted() {
-    this.$data.groupMessage = this.$data.groupList[4].intro;
-    this.$data.groupName = this.$data.groupList[4].name;
+    this.$data.groupMessage = this.$data.groupList[3].intro;
+    this.$data.groupName = this.$data.groupList[3].name;
   }
 }
 </script>

@@ -1,39 +1,45 @@
 <style lang="scss" scoped>
-.copyright-list {
-  cursor: pointer;
-  position: relative;
+%clear-both::after {
+  content: "";
   display: block;
-  width: 3.6rem;
-  height: 5rem;
-  overflow: hidden;
-  margin-left: 0.36rem;
-  box-shadow: 0 0px 4px rgba($color: #000000, $alpha: 0.16);
-  margin-top: 0.36rem;
+  clear: both;
+}
 
-  .copyright-image {
-    width: 80%;
-    height: 4rem;
-    margin: 0.3rem auto;
+.award-list {
+  @extend %clear-both;
 
-    img {
-      width: 100%;
-    }
+  position: relative;
+  width: 95%;
+  margin: 0 auto;
+  text-align: start;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 0 2px 1px rgba($color: #000000, $alpha: .3);
+  min-height: 1rem;
+  align-items: center;
+  text-align: center;
+
+  span {
+    // display: flex;
+    align-items: center;
+    padding: .2rem;
+    padding-left: 0;
+    text-align: start;
+    word-wrap:break-word;
   }
-
-  .copyright-name {
-    font-size: 0.20rem;
-    color: #2a2a2a;
-    display: block;
-  }
+}
+.isDouble {
+  background-color: #e8d6ff;
 }
 </style>
 
 <template>
-  <div class="copyright-list">
-    <div class="copyright-image">
-      <img :src="url" alt="">
-    </div>
-    <span class="copyright-name">{{ name }}</span>
+  <div class="award-list" :class="index % 2 == 0 ? 'isDouble' : ''">
+    <span style="width: 1.8rem">{{ index }}</span>
+    <span style="width: 3.3rem">{{ item.type }}</span>
+    <span style="width: 3.3rem">{{ item.name }}</span>
+    <span style="width: 3.3rem">{{ item.id }}</span>
+    <span style="width: 3.3rem">{{ item.owner }}</span>
   </div>
 </template>
 
@@ -43,11 +49,11 @@ import Component from 'vue-class-component';
 
 @Component({
   props: {
-    url: String,
-    name: String
+    item: Object,
+    index: Number
   }
 })
 export default class List extends Vue {
-  
+
 }
 </script>
