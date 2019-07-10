@@ -19,6 +19,15 @@
 <template>
   <div class="honor-container">
     <span class="honor-title">最近的荣誉</span>
+    <setType2
+      :honorName="'2019年获得“广东省五四青年”提名奖'"
+      :honorTime="'2019年'"
+      :imgList="[
+        require('@/assets/images/we/14.jpg'),
+        require('@/assets/images/we/16.jpg'),
+      ]"
+      :honorIntro="'“QG工作室”在学校的大力支持下，经过十几年的建设，形成了自己独特的文化和传承，工作室把团队精神的培养上升到与学术与科研能力并重，团队具有很强的凝聚力和战斗力，培养了大批多品学兼优、专业知识扎实、能独当一面的创新型人才，获得了丰硕的成果，团队成为广东工业大学“标志性获奖团队”，于2019年荣获广东省五四青年奖章提名奖。'"
+    ></setType2>
     <setType1
       :honorName="'2017年获得“小平科技创新团队”称号'"
       :honorTime="'2017年'"

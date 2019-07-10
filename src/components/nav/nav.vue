@@ -21,10 +21,6 @@
     width: 2rem;
     height: 0.96rem;
     padding: 0 0.32rem;
-
-    img {
-
-    }
   }
 
   .nav-list-container {
@@ -132,6 +128,12 @@ export default class Nav extends Vue {
       label: 'we',
       children: [
         {
+          value: '重要时刻',
+          label: 'moment',
+          children: [],
+          isActive: false
+        },
+        {
           value: '指导老师',
           label: 'advisor',
           children: [],
@@ -171,6 +173,12 @@ export default class Nav extends Vue {
         {
           value: '奖项',
           label: 'awards',
+          children: [],
+          isActive: false
+        },
+        {
+          value: '新闻链接',
+          label: 'news',
           children: [],
           isActive: false
         },

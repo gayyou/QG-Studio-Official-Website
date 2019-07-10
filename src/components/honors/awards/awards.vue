@@ -62,7 +62,7 @@
     <list
       v-for="(item, index) in awardList"
       :key="index + 1"
-      :index="index + 1"
+      :index="index + 1 + bashIndex"
       :item="item"
     ></list>
     </div>
@@ -97,11 +97,15 @@ export default class Awards extends Vue{
       value: '序号'
     },
     {
+      width: 2,
+      value: '项目'
+    },
+    {
       width: 2.5,
       value: '比赛名称'
     },
     {
-      width: 2,
+      width: 1.5,
       value: '时间'
     },
     {
@@ -109,7 +113,7 @@ export default class Awards extends Vue{
       value: '比赛等级'
     },
     {
-      width: 2,
+      width: 1.5,
       value: '获奖等级'
     },
     {
@@ -128,7 +132,9 @@ export default class Awards extends Vue{
 
   awardList: any = [
 
-  ]
+  ];
+
+  bashIndex: Number = 0;
 
   currentPage: Number = 0;
 
@@ -136,7 +142,7 @@ export default class Awards extends Vue{
   
   mounted() {
     this.currentPage = 1;
-    this.totalPage = Math.ceil(awards.length / 10);
+    this.totalPage = Math.ceil(awards.length);
   }
 
   changePage(value: any) {
@@ -155,8 +161,9 @@ export default class Awards extends Vue{
   @Watch('currentPage')
   turnPage(newVal) {
     this.awardList = []
+    this.bashIndex = (newVal - 1) * 10;
     for (let i = (newVal - 1) * 10; i < (newVal) * 10 && i < awards.length; i++) {
-      let { competition, time, level, award, department, student, teacher } = awards[i];
+      let { competition, time, level, award, department, student, teacher, project } = awards[i];
       this.awardList.push({
         competition,
         time,
@@ -164,7 +171,8 @@ export default class Awards extends Vue{
         award,
         department,
         student,
-        teacher
+        teacher,
+        project
       })
     }
   }

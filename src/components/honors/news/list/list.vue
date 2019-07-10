@@ -11,6 +11,7 @@
   position: relative;
   width: 95%;
   margin: 0 auto;
+  text-align: start;
   display: flex;
   justify-content: center;
   box-shadow: 0 0 2px 1px rgba($color: #000000, $alpha: .3);
@@ -22,7 +23,8 @@
     // display: flex;
     align-items: center;
     padding: .2rem;
-    text-align: center;
+    padding-left: 0;
+    text-align: start;
     word-wrap:break-word;
   }
 }
@@ -33,15 +35,9 @@
 
 <template>
   <div class="award-list" :class="index % 2 == 0 ? 'isDouble' : ''">
-    <span style="width: 0.6rem">{{ index }}</span>
-    <span style="width: 1.6rem">{{ item.project }}</span>
-    <span style="width: 2.1rem">{{ item.competition }}</span>
-    <span style="width: 1.1rem">{{ item.time }}</span>
-    <span style="width: 1.6rem">{{ item.level }}</span>
-    <span style="width: 1.1rem">{{ item.award }}</span>
-    <span style="width: 2.1rem">{{ item.department }}</span>
-    <span style="width: 2.1rem">{{ item.student }}</span>
-    <span style="width: 2.1rem">{{ item.teacher }}</span>
+    <span style="width: 1.8rem">{{ index }}</span>
+    <span style="width: 5.8rem">{{ item.name }}</span>
+    <span style="width: 7.8rem"><a :href="item.link" target="_blank">{{ item.link }}</a></span>
   </div>
 </template>
 

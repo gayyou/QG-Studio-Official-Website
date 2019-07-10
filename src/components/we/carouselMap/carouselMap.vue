@@ -65,10 +65,9 @@
     position: absolute;
     z-index: 22;
     left: 0;
-    top: 50%;
-    transform: translateY(-50%) rotate(180deg);
-    width: 0.82rem;
-    height: 0.82rem;
+    top: 0;
+    width: 50vw;
+    height: 70vh;
 
     img {
       width: 100%;
@@ -81,10 +80,9 @@
     position: absolute;
     z-index: 22;
     right: 0;
-    width: 0.82rem;
-    height: 0.82rem;
-    top: 50%;
-    transform: translateY(-50%);
+    width: 50vw;
+    height: 70vh;
+    top: 0;
     
     img {
       width: 100%;
@@ -125,10 +123,10 @@
       ></div>
     </div>
     <div class="arrow-left" @click="turnLeft">
-      <img src="@/assets/icons/arrow-right.png" alt="">
+      
     </div>
     <div class="arrow-right" @click="turnRight">
-      <img src="@/assets/icons/arrow-right.png" alt="">
+      
     </div>
     <span class="image-intro">{{ imgMessage }}</span>
   </div>
@@ -152,8 +150,8 @@ export default class CarouseMap extends Vue {
 
   imgList: Array<any> = [
     {
-      url: require('@/assets/images/we/1.png'),
-      message: '2015挑战杯智慧城市专项赛总决赛特等奖获奖合影',
+      url: require('@/assets/images/we/3.jpg'),
+      message: '第十二届“挑战杯”全国大学生课外学术科技作品竞赛终审决赛留影',
       className: 'slide-left-wait'
     },
     {
@@ -162,8 +160,8 @@ export default class CarouseMap extends Vue {
       className: 'slide-left'
     },
     {
-      url: require('@/assets/images/we/3.jpg'),
-      message: '第十二届“挑战杯”全国大学生课外学术科技作品竞赛终审决赛留影',
+      url: require('@/assets/images/we/14.jpg'),
+      message: '2019年获“五四青年奖章”团体奖提名奖',
       className: 'slide-center'
     },
     {

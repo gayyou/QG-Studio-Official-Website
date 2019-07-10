@@ -23,8 +23,8 @@
 
 <template>
   <div class="we-container" id="advisor">
-    <carouseMap></carouseMap>
-    <counselor></counselor>
+    <carouseMap id="moment"></carouseMap>
+    <counselor id="advisor"></counselor>
     <group id="direction"></group>
     <honor id="honors"></honor>
     <!-- <toTop class="to-Top"></toTop> -->
