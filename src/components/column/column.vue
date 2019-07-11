@@ -51,6 +51,25 @@
             </div>
           </div>
         </div>
+        <!-- 毕业照 -->
+        <div class="card">
+          <div class="card-left">
+            <div class="img-container">
+              <img src="../../assets/images/column/characteristic/tech.jpg" alt>
+              <button class="zoomButton" @click="openMask"><img src="../../assets/icons/zoom.png" alt=""></button>
+            </div>
+          </div>
+          <div class="card-right">
+            <div class="content-container">
+              <div class="no">04</div>
+              <h2>毕业生合照</h2>
+              <div
+                class="introduce-container"
+              >这是内容</div>
+            </div>
+          </div>
+        </div>
+        <!-- 毕业照 -->
       </section>
       <h1 class="second-header" id="importantEvent">QG大事件</h1>
       <section class="part-2">
@@ -175,18 +194,107 @@
     </main>
     <footer class="footer">
       <p>QG十五年，从未停步</p>
-        <backToTopee-button>
-          
-        </backToTopee-button>
+        <backToTopee-button></backToTopee-button>
     </footer>
+    <el-dialog :visible.sync="showMask" width="11rem" top='.3rem'>
+      <el-carousel trigger="click"  class="carousel-container" indicator-position='none' :autoplay=false  height="6.7rem" style="overflow: hidden;">
+        <el-carousel-item v-for="item in graduationImgList" :key="item.time" class="carousel-item">
+          <div class="graduationImg-container">
+            <img :src="item.src" >
+          </div>
+          <p class="graduation-time">{{item.time}}</p>
+        </el-carousel-item>
+      </el-carousel>
+    </el-dialog>
   </div>
 </template>
 
 
 
+<script lang="ts">
+import Vue from 'vue'
+import Component from 'vue-class-component'
+import BackToTopButton from '../nav/backToTopButton.vue'
+
+@Component({
+  components: {
+    'backToTopee-button': BackToTopButton
+  }
+})
+
+export default class column extends Vue {
+  showMask: Boolean = false;
+  graduationImg: String = '';
+  graduationImgList: Array<Object> = [
+    {
+      src: require('../../assets/images/column/graduation/2008.png'),
+      time: 'QG 2008届毕业生合照'
+    }, {
+      src: require('../../assets/images/column/graduation/2009.png'),
+      time: 'QG 2009届毕业生合照'
+    }, {
+      src: require('../../assets/images/column/graduation/2010.png'),
+      time: 'QG 2010届毕业生合照'
+    }, {
+      src: require('../../assets/images/column/graduation/2011.jpg'),
+      time: 'QG 2011届毕业生合照'
+    }, {
+      src: require('../../assets/images/column/graduation/2012.jpg'),
+      time: 'QG 2012届毕业生合照'
+    }, {
+      src: require('../../assets/images/column/graduation/2013.jpg'),
+      time: 'QG 2013届毕业生合照'
+    }, {
+      src: require('../../assets/images/column/graduation/2014.jpg'),
+      time: 'QG 2014届毕业生合照'
+    }, {
+      src: require('../../assets/images/column/graduation/2016.jpg'),
+      time: 'QG 2016届毕业生合照'
+    }, {
+      src: require('../../assets/images/column/graduation/2017.jpg'),
+      time: 'QG 2017届毕业生合照'
+    }, {
+      src: require('../../assets/images/column/graduation/2018.jpg'),
+      time: 'QG 2018届毕业生合照'
+    }, {
+      src: require('../../assets/images/column/graduation/2019.jpg'),
+      time: 'QG 2019届毕业生合照'
+    }
+  ]
+  mouted() {
+  }
+  openMask(index: number) {
+    this.showMask = true;
+    
+  }
+}
+</script>
 
 
 <style  scoped>
+.carousel-container {
+  height: auto;
+  
+}
+.carousel-item {
+  height: auto;
+  width: 100%;
+  text-align: center;
+}
+.graduationImg-container {
+
+  text-align: center;
+}
+.graduationImg-container img {
+  height: 5.6rem;
+  width: 8.4rem;
+}
+.graduation-time {
+  margin: .42rem auto 0 auto;
+  color: #2a2a2a;
+  font-size: .4rem;
+  
+}
 .first-header {
   border: 0.02rem solid #e5e5e5;
   padding: 0.15rem 0;
@@ -211,16 +319,35 @@
 }
 .card-right {
   margin-left: 0.54rem;
-  margin-top: .48rem;
 }
 .top {
   margin-top: .48rem;
-
+}
+.img-container {
+  position: relative;
+  margin-top: .48rem;
 }
 .img-container img {
   width: 8rem;
-  height: 4.5rem;
+  height: 4.9rem;
+  box-shadow: 0 .05rem .06rem 0 #b5b0b0;
 }
+
+.zoomButton {
+  position: absolute;
+  top: .16rem;
+  right: .16rem;
+  height: .64rem;
+  width: .64rem;
+  background: #fff;
+  border-radius: 50%;
+}
+.zoomButton img {
+  height: .32rem;
+  width: .32rem;
+  box-shadow: none;
+}
+
 .content-container {
   text-align: left;
 }
@@ -287,7 +414,7 @@
 }
 .line {
   /* 在这里修改时间轴的高度 */
-  height: 31rem;
+  height: 34rem;
   background-color: #707070;
   width: .04rem;
   margin: 0 auto;
@@ -351,22 +478,7 @@
   margin-bottom: 3rem;
 
 }
+
 </style>
 
 
-<script lang="ts">
-import Vue from 'vue'
-import Component from 'vue-class-component'
-import BackToTopButton from '../nav/backToTopButton.vue'
-
-@Component({
-  components: {
-    'backToTopee-button': BackToTopButton
-  }
-})
-
-export default class column extends Vue {
-  mouted() {
-  }
-}
-</script>
