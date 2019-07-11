@@ -65,10 +65,9 @@
     position: absolute;
     z-index: 22;
     left: 0;
-    top: 50%;
-    transform: translateY(-50%) rotate(180deg);
-    width: 0.82rem;
-    height: 0.82rem;
+    top: 0;
+    width: 50vw;
+    height: 70vh;
 
     img {
       width: 100%;
@@ -81,10 +80,9 @@
     position: absolute;
     z-index: 22;
     right: 0;
-    width: 0.82rem;
-    height: 0.82rem;
-    top: 50%;
-    transform: translateY(-50%);
+    width: 50vw;
+    height: 70vh;
+    top: 0;
     
     img {
       width: 100%;
@@ -125,10 +123,10 @@
       ></div>
     </div>
     <div class="arrow-left" @click="turnLeft">
-      <img src="@/assets/icons/arrow-right.png" alt="">
+      
     </div>
     <div class="arrow-right" @click="turnRight">
-      <img src="@/assets/icons/arrow-right.png" alt="">
+      
     </div>
     <span class="image-intro">{{ imgMessage }}</span>
   </div>
@@ -152,37 +150,41 @@ export default class CarouseMap extends Vue {
 
   imgList: Array<any> = [
     {
-      url: require('@/assets/images/we/1.png'),
-      message: '',
+      url: require('@/assets/images/we/3.jpg'),
+      message: '第十二届“挑战杯”全国大学生课外学术科技作品竞赛终审决赛留影',
       className: 'slide-left-wait'
     },
     {
-      url: require('@/assets/images/we/2.jpg'),
-      message: '',
+      url: require('@/assets/images/we/2.png'),
+      message: '2015挑战杯智慧城市专项赛总决赛特等奖现场',
       className: 'slide-left'
     },
     {
-      url: require('@/assets/images/we/3.jpg'),
-      message: '',
+      url: require('@/assets/images/we/14.jpg'),
+      message: '2019年获“五四青年奖章”团体奖提名奖',
       className: 'slide-center'
     },
     {
       url: require('@/assets/images/we/4.jpg'),
-      message: '',
+      message: '广东省政协主席王荣、学校校长陈新听取工作室介绍',
       className: 'slide-right'
     },
     {
       url: require('@/assets/images/we/5.jpg'),
-      message: '',
+      message: 'QG工作室成员方锦基于2017年在人民大会堂接受“小平科技创新团队”表彰',
       className: 'slide-right-wait'
     }
   ];
 
-  imgMessage: String = 'QG工作室指导老师谢光强老师、学生代表叶志活同学在广东工业大学纪念五四运动100周年大会暨第七次学生代表大会、第一次研究生代表大会上接收表彰';
+  imgMessage: String = '';
 
-  currentIndex: Number = 0;
+  currentIndex: Number = -1;
 
   isMoving: Boolean = false;
+
+  mounted() {
+    this.$data.currentIndex = 0;
+  }
 
   turnLeft() {
     // 防止多次点击
@@ -213,7 +215,7 @@ export default class CarouseMap extends Vue {
     for (let i = 0; i < 5; i++) {
       this.$data.imgList[(bashIndex + i) % length].className = this.$data.classOption[i];
     }
-
+    this.$data.imgMessage = this.$data.imgList[(bashIndex + 2) % length].message;
     setTimeout(() => {
       this.$data.isMoving = false;
     }, 750);

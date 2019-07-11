@@ -21,6 +21,9 @@
     position: relative;
     width: 7rem;
     height: 5rem;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
   }
 
   .section-right {
@@ -59,8 +62,8 @@
 
 <template>
   <div class="setType3-container">
-    <div class="section-left">
-      <img :src="imgList[0]" alt="">
+    <div class="section-left"  :style="'background-image: url(' + imgList[0] + ')'">
+      <!-- <img :src="imgList[0]" alt=""> -->
     </div>
     <div class="section-right">
       <span class="honor-name">{{ honorName }}</span>

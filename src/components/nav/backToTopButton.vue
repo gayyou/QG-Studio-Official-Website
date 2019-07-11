@@ -4,8 +4,8 @@
   width: 0.85rem;
   height: 0.85rem;
   border-radius: 50%;
+  -webkit-box-shadow: 1px 2px 6px 1px #c7c1c1;
   box-shadow: 1px 2px 6px 1px #c7c1c1;
-  cursor: pointer;
 }
 </style>
 
@@ -26,7 +26,8 @@ import Component from 'vue-class-component'
 
 export default class BackToTopButton extends Vue {
   move() {
-    this.$root.$children[0].$refs['scrollbar'].wrap.scrollTop = 0;
+    let refs = <any>this.$root.$children[0].$refs['scrollbar'];
+    refs.wrap.scrollTop = 0;
   }
 }
 </script>

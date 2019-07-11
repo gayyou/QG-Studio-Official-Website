@@ -49,7 +49,8 @@ import pageFooter from './components/pageFooter/pageFooter.vue'
   }
 })
 export default class App extends Vue {
-  mouted() {
+  mounted() {
+    console.log(this);
     // console.log(this.$refs['scrollbar'])
     // document.getElementsByClassName('el-scrollbar__wrap')[0].style.overflowX = 'hidden';
   }

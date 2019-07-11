@@ -15,19 +15,25 @@
   position: relative;
   width: 100%;
 }
+
+.to-Top {
+
+}
 </style>
 
 <template>
   <div class="we-container" id="advisor">
-    <carouseMap></carouseMap>
-    <counselor></counselor>
+    <carouseMap id="moment"></carouseMap>
+    <counselor id="advisor"></counselor>
     <group id="direction"></group>
     <honor id="honors"></honor>
+    <!-- <toTop class="to-Top"></toTop> -->
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
+import toTop from '../nav/backToTopButton.vue'
 import Component from 'vue-class-component';
 import carouseMap from './carouselMap/carouselMap.vue'
 import counselor from './counselor/counselor.vue'
@@ -39,7 +45,8 @@ import honor from './honor/honor.vue'
     carouseMap,
     counselor,
     group,
-    honor
+    honor,
+    toTop
   }
 })
 export default class We extends Vue{

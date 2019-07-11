@@ -21,12 +21,18 @@
     .left-top {
       width: 100%;
       height: 7.6rem;
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
     }
 
     .left-bottom {
       margin-top: 0.4rem;
       width: 100%;
       height: 5rem;
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
     }
 
     img {
@@ -48,6 +54,9 @@
     .right-top {
       width: 100%;
       height: 5.6rem;
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
     }
 
     .right-bottom {
@@ -92,16 +101,16 @@
 <template>
   <div class="setType-container">
     <div class="section-left">
-      <div class="left-top">
-        <img :src="imgList[0]" alt="">
+      <div class="left-top" :style="'background-image: url(' + imgList[0] + ')'">
+        <!-- <img :src="imgList[0]" alt=""> -->
       </div>
-      <div class="left-bottom">
-        <img :src="imgList[1]" alt="">
+      <div class="left-bottom" :style="'background-image: url(' + imgList[1] + ')'">
+        <!-- <img :src="imgList[1]" alt=""> -->
       </div>
     </div>
     <div class="section-right">
-      <div class="right-top">
-        <img :src="imgList[2]" alt="">
+      <div class="right-top" :style="'background-image: url(' + imgList[2] + ')'">
+        <!-- <img :src="imgList[2]" alt=""> -->
       </div>
       <div class="right-bottom">
         <span class="honor-name">{{ honorName }}</span>
