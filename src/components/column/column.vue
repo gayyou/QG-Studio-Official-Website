@@ -15,14 +15,16 @@
           </div>
           <div class="card-right">
             <div class="img-container">
-               <img src="../../assets/images/column/characteristic/camp.jpg" alt>
+              <img src="../../assets/images/column/characteristic/camp.jpg" alt>
+              <button class="zoomButton" @click="openMask(0)"><img src="../../assets/icons/zoom.png" alt=""></button>
             </div>
           </div>
         </div>
         <div class="card">
           <div class="card-left">
             <div class="img-container">
-               <img src="../../assets/images/column/characteristic/tech.jpg" alt>
+              <img src="../../assets/images/column/characteristic/tech.jpg" alt>
+              <button class="zoomButton" @click="openMask(1)"><img src="../../assets/icons/zoom.png" alt=""></button>
             </div>
           </div>
           <div class="card-right">
@@ -47,7 +49,8 @@
           </div>
           <div class="card-right">
             <div class="img-container">
-               <img src="../../assets/images/column/characteristic/activity.jpg" alt>
+              <img src="../../assets/images/column/characteristic/activity.jpg" alt>
+              <button class="zoomButton" @click="openMask(2)"><img src="../../assets/icons/zoom.png" alt=""></button>
             </div>
           </div>
         </div>
@@ -55,8 +58,8 @@
         <div class="card">
           <div class="card-left">
             <div class="img-container">
-              <img src="../../assets/images/column/characteristic/tech.jpg" alt>
-              <button class="zoomButton" @click="openMask"><img src="../../assets/icons/zoom.png" alt=""></button>
+              <img src="../../assets/images/column/characteristic/graduation.jpg" alt>
+              <button class="zoomButton" @click="openMask(3)"><img src="../../assets/icons/zoom.png" alt=""></button>
             </div>
           </div>
           <div class="card-right">
@@ -198,7 +201,7 @@
     </footer>
     <el-dialog :visible.sync="showMask" width="11rem" top='.3rem'>
       <el-carousel trigger="click"  class="carousel-container" indicator-position='none' :autoplay=false  height="6.7rem" style="overflow: hidden;">
-        <el-carousel-item v-for="item in graduationImgList" :key="item.time" class="carousel-item">
+        <el-carousel-item v-for="item in nowImgList" :key="item.time" class="carousel-item">
           <div class="graduationImg-container">
             <img :src="item.src" >
           </div>
@@ -225,6 +228,33 @@ import BackToTopButton from '../nav/backToTopButton.vue'
 export default class column extends Vue {
   showMask: Boolean = false;
   graduationImg: String = '';
+  nowImgList: Array<Object> = [];
+  campImgList: Array<Object> = [];
+  healthyImgList: Array<Object> = [];
+  techImgList: Array<Object> = [
+    {
+      src: require('../../assets/images/column/tech/1.jpg'),
+      time: '1'
+    }, {
+      src: require('../../assets/images/column/tech/2.jpg'),
+      time: '2'
+    }, {
+      src: require('../../assets/images/column/tech/3.jpg'),
+      time: '3'
+    }, {
+      src: require('../../assets/images/column/tech/4.jpg'),
+      time: '4'
+    }, {
+      src: require('../../assets/images/column/tech/5.jpg'),
+      time: '5'
+    }, {
+      src: require('../../assets/images/column/tech/6.jpg'),
+      time: '6'
+    }, {
+      src: require('../../assets/images/column/tech/7.jpg'),
+      time: '7'
+    }
+  ];
   graduationImgList: Array<Object> = [
     {
       src: require('../../assets/images/column/graduation/2008.png'),
@@ -260,12 +290,13 @@ export default class column extends Vue {
       src: require('../../assets/images/column/graduation/2019.jpg'),
       time: 'QG 2019届毕业生合照'
     }
-  ]
+  ];
   mouted() {
   }
   openMask(index: number) {
+    const imgType = ['campImgList', 'techImgList', 'healthyImgList', 'graduationImgList'];
+    this.nowImgList = this[imgType[index]];
     this.showMask = true;
-    
   }
 }
 </script>
@@ -341,6 +372,7 @@ export default class column extends Vue {
   width: .64rem;
   background: #fff;
   border-radius: 50%;
+  
 }
 .zoomButton img {
   height: .32rem;
