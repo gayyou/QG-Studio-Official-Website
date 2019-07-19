@@ -44,6 +44,10 @@
     }
   }
 }
+.page-container {
+  margin-top: 0.3rem;
+  text-align: center;
+}
 </style>
 
 <template>
@@ -58,11 +62,20 @@
     </div>
     <div class="award-main">
     <list
-      v-for="(item, index) in newsList"
+      v-for="(item, index) in dispalyList"
       :key="index + 1"
       :index="index + 1"
       :item="item"
     ></list>
+    <el-pagination
+      class="page-container"
+      background
+      layout="prev, pager, next"
+      :total="totalPage"
+      :current-page="currentPage"
+      @current-change="changePage"
+    >
+    </el-pagination>
     </div>
   </div>
 </template>
@@ -71,6 +84,7 @@
 import Vue from 'vue'
 import Component from 'vue-class-component';
 import list from './list/list.vue'
+import { Watch } from 'vue-property-decorator';
 
 @Component({
   components: {
@@ -175,6 +189,33 @@ export default class News extends Vue {
       name: '广东卫视高校创新项目专访、广东新闻联播头条播出',
       link: 'http://news.wesend.tv/wd/?sd=178169&from=groupmessage&isappinstalled=1'
     },
-  ]
+  ];
+
+  dispalyList: Array<any> = [];
+
+  bashIndex: Number = 0;
+
+  currentPage: Number = 0;
+
+  totalPage: Number = 0;
+
+  mounted() {
+    this.currentPage = 1;
+    this.totalPage = Math.ceil(this.newsList.length);
+  }
+
+  changePage(newVal) {
+    this.currentPage = newVal;
+  }
+
+  @Watch('currentPage')
+  changeCurrentPage(newVal) {
+    this.dispalyList = [];
+
+    for (let i = (newVal - 1) * 10; i < (newVal) * 10 && i < this.newsList.length; i++) {
+      this.dispalyList.push(this.newsList[i]);
+    }
+
+  }
 }
 </script>

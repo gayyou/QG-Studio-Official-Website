@@ -23,6 +23,9 @@
 .el-scrollbar__thumb {
   background-color: rgba(0, 0, 0, .3)!important;
 }
+.el-pagination.is-background .el-pager li:not(.disabled).active {
+  background-color: #e8d6ff!important;
+}
 </style>
 
 

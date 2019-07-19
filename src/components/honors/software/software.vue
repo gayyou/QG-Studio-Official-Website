@@ -44,6 +44,10 @@
     }
   }
 }
+.page-container {
+  margin-top: 0.3rem;
+  text-align: center;
+}
 </style>
 
 <template>
@@ -58,11 +62,20 @@
     </div>
     <div class="award-main">
     <list
-      v-for="(item, index) in softwareList"
+      v-for="(item, index) in dispalyList"
       :key="index + 1"
       :index="index + 1"
       :item="item"
     ></list>
+    <el-pagination
+      class="page-container"
+      background
+      layout="prev, pager, next"
+      :total="totalPage"
+      :current-page="currentPage"
+      @current-change="changePage"
+    >
+    </el-pagination>
     </div>
   </div>
 </template>
@@ -72,6 +85,7 @@ import Vue from 'vue'
 import Component from 'vue-class-component';
 import list from './list/list.vue'
 import layer from './layer/layer.vue'
+import { Watch } from 'vue-property-decorator';
 
 @Component({
   components: {
@@ -134,7 +148,59 @@ export default class Software extends Vue {
       id: '2017SR287905',
       name: '智能急救头盔系统V1.0',
       time: '2017年03月16日'
+    },
+    {
+      id: '2011R11L029047',
+      name: '建筑楼宇声光质量检测模拟系统',
+      time: '2017年03月16日'
+    },
+    {
+      id: '2011SR071360',
+      name: '企业缴费一卡通综合管理平台软件',
+      time: '2017年03月16日'
+    },
+    {
+      id: '2010SR000003',
+      name: '质量计量信息一体化管理平台软件',
+      time: '2017年03月16日'
+    },
+    {
+      id: '2009SR061272',
+      name: '3D虚拟场景编辑系统',
+      time: '2017年03月16日'
+    },
+    {
+      id: '2009SR061274',
+      name: '数字化虚拟场景实时漫游系统',
+      time: '2017年03月16日'
     }
-  ]
+  ];
+
+  dispalyList: Array<any> = [];
+
+  bashIndex: Number = 0;
+
+  currentPage: Number = 0;
+
+  totalPage: Number = 0;
+
+  mounted() {
+    this.currentPage = 1;
+    this.totalPage = Math.ceil(this.softwareList.length);
+  }
+
+  changePage(newVal) {
+    this.currentPage = newVal;
+  }
+
+  @Watch('currentPage')
+  changeCurrentPage(newVal) {
+    this.dispalyList = [];
+
+    for (let i = (newVal - 1) * 10; i < (newVal) * 10 && i < this.softwareList.length; i++) {
+      this.dispalyList.push(this.softwareList[i]);
+    }
+
+  }
 }
 </script>

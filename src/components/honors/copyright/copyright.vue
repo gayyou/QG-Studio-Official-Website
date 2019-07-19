@@ -44,6 +44,10 @@
     }
   }
 }
+.page-container {
+  margin-top: 0.3rem;
+  text-align: center;
+}
 </style>
 
 <template>
@@ -58,11 +62,20 @@
     </div>
     <div class="award-main">
     <list
-      v-for="(item, index) in copyRightList"
+      v-for="(item, index) in dispalyList"
       :key="index + 1"
       :index="index + 1"
       :item="item"
     ></list>
+    <el-pagination
+      class="page-container"
+      background
+      layout="prev, pager, next"
+      :total="totalPage"
+      :current-page="currentPage"
+      @current-change="changePage"
+    >
+    </el-pagination>
     </div>
   </div>
 </template>
@@ -71,6 +84,7 @@
 import Vue from 'vue'
 import Component from 'vue-class-component';
 import list from './list/list.vue'
+import { Watch } from 'vue-property-decorator';
 
 @Component({
   components: {
@@ -137,7 +151,70 @@ export default class copyright extends Vue {
       name: '一种智能急救头盔',
       id: 'ZL 2017 2 0626760.2',
       owner: '邓苏城、谢光强、李培锋、李杨、方锦基、黄冠恒、陈济斌、梁智豪、庄锦坤、梁盛兑、张盛强、张晓荣'
+    },
+    {
+      type: '实用新型专利',
+      name: '多功能便携式数据拷贝装置',
+      id: '201110180046.8',
+      owner: '谢光强'
+    },
+    {
+      type: '实用新型专利',
+      name: '一种电子药盒',
+      id: '200920291910.4',
+      owner: '谢光强'
+    },
+    {
+      type: '实用新型专利',
+      name: '一种交互式投影的检测系统',
+      id: '200920194269.2',
+      owner: '谢光强'
+    },
+    {
+      type: '发明专利',
+      name: '一种电子药盒及其管理系统',
+      id: '200910258397.3',
+      owner: '谢光强'
+    },
+    {
+      type: '发明专利',
+      name: '一种无线智能家电语音控制系统',
+      id: '200910213857.0',
+      owner: '谢光强'
+    },
+    {
+      type: '发明专利',
+      name: '一种交互式投影的检测系统及检测方法',
+      id: '200910192141.7',
+      owner: '谢光强'
+    },
+  ];
+
+  dispalyList: Array<any> = [];
+
+  bashIndex: Number = 0;
+
+  currentPage: Number = 0;
+
+  totalPage: Number = 0;
+
+  mounted() {
+    this.currentPage = 1;
+    this.totalPage = Math.ceil(this.copyRightList.length);
+  }
+
+  changePage(newVal) {
+    this.currentPage = newVal;
+  }
+
+  @Watch('currentPage')
+  changeCurrentPage(newVal) {
+    this.dispalyList = [];
+
+    for (let i = (newVal - 1) * 10; i < (newVal) * 10 && i < this.copyRightList.length; i++) {
+      this.dispalyList.push(this.copyRightList[i]);
     }
-  ]
+
+  }
 }
 </script>

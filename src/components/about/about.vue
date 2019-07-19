@@ -69,15 +69,12 @@ export default class Nav extends Vue {
       url: require('@/assets/images/about/8.jpg'),
       title: '第二十一届“广东青年五四奖章”提名奖',
       message: [
-        '团队被授予以邓小平同志命名的大学生“小平科技创新团队”称号，并于2018年',
-        '在北京人民大会堂接受颁奖。该项称号是由共青团中央、全国青联、全国学联、',
-        '全国少工委、中国青少年科技创新奖励基金颁发（全国共50支，广东省仅2支）。',
-        '旨在面向全国大学生遴选50个在学术研究、科技竞赛、成果转化等方面取得突出成绩',
-        '或显示较大潜力的大学生科技创新团队给予表彰支持'
+        '2019年，我们团队获得了第二十一届“广东青年五四奖章”提名奖',
+        '在广东工业大学召开的纪念五四运动100周年大会暨第七次学生代表大会和第一次研究生代表大会上接受表彰。'
       ],
       id: '3',
-      height: 150,
-      position: 'center center'
+      height: 180,
+      position: 'center top'
     },
     {
       url: require('@/assets/images/about/2.png'),
@@ -100,7 +97,7 @@ export default class Nav extends Vue {
     },
     {
       url: require('@/assets/images/about/7.png'),
-      title: '媒体采访',
+      title: '社会影响力',
       message: [
         '团队所获成果收到了广东卫视、广州日报、新快报等主流媒体的广泛关注和报道，',
         '接受了广东卫视专访并介绍了项目的主要内容和成果，采访内容在《广东新闻联播》中头条播出。',
