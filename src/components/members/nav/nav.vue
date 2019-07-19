@@ -69,7 +69,6 @@ export default class Nav extends Vue{
     if (!index) {
       return ;
     }
-    console.log('123')
     this.$data.currentIndex = index;
     this.$emit('year', this.$data.years[index]);
   }
