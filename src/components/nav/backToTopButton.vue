@@ -6,6 +6,10 @@
   border-radius: 50%;
   -webkit-box-shadow: 1px 2px 6px 1px #c7c1c1;
   box-shadow: 1px 2px 6px 1px #c7c1c1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 }
 </style>
 

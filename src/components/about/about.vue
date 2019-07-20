@@ -2,6 +2,27 @@
 .about-container {
   position: relative;
 }
+.back-to-top {
+  cursor: pointer;
+  position: absolute;
+  bottom: 0.4rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 111;
+  width: 0.85rem;
+  height: 0.85rem;
+  border-radius: 50%;
+  -webkit-box-shadow: 1px 2px 6px 1px #c7c1c1;
+  box-shadow: 1px 2px 6px 1px #c7c1c1;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    width: 50%;
+  }
+}
 </style>
 
 <template>
@@ -17,6 +38,9 @@
       :height="item.height"
       :position="item.position"
     ></list>
+    <div class="back-to-top" @click="backToTop">
+      <img src="@/assets/icons/up.png"  alt="">
+    </div>
   </div>
 </template>
 
@@ -69,7 +93,7 @@ export default class Nav extends Vue {
       url: require('@/assets/images/about/8.jpg'),
       title: '第二十一届“广东青年五四奖章”提名奖',
       message: [
-        '2019年，我们团队获得了第二十一届“广东青年五四奖章”提名奖',
+        '2019年，团队获得了第二十一届“广东青年五四奖章”提名奖',
         '在广东工业大学召开的纪念五四运动100周年大会暨第七次学生代表大会和第一次研究生代表大会上接受表彰。'
       ],
       id: '3',
@@ -147,6 +171,10 @@ export default class Nav extends Vue {
       height: 190,
       position: 'center top'
     },
-  ]
+  ];
+  backToTop() {
+    let refs = <any>this.$root.$children[0].$refs['scrollbar'];
+    refs.wrap.scrollTop = 0;
+  }
 }
 </script>

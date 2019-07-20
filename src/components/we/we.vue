@@ -27,7 +27,7 @@
     <counselor id="advisor"></counselor>
     <group id="direction"></group>
     <honor id="honors"></honor>
-    <!-- <toTop class="to-Top"></toTop> -->
+    <toTop class="to-Top"></toTop>
   </div>
 </template>
 

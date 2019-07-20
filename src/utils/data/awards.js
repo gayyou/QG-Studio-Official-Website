@@ -1,5 +1,25 @@
 export const awards = [
   {
+    competition: '大学生“小平科技创新团队”（全国50支，广东省2支）',
+    project: '小平科技创新团队',
+    time: '2017',
+    level: '国家级',
+    award: '',
+    department: '共青团中央、全国青联、全国学联、全国少工委、中国青少年科技创新奖励基金',
+    student: '',
+    teacher: '谢光强、李杨'
+  },
+  {
+    competition: '“广东青年五四奖章集体奖”提名奖',
+    project: '',
+    time: '2017',
+    level: '省级',
+    award: '',
+    department: '共青团广东省委员会、广东省青年联合会',
+    student: '',
+    teacher: '谢光强、李杨'
+  },
+  {
     competition: '第十四届“挑战杯”全国大学生课外学术科技作品竞赛“智慧城市”专项赛',
     project: '智慧型酒店服务系统',
     time: '2015.07',

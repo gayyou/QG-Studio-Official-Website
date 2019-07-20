@@ -18,6 +18,7 @@
     <news id="news"></news>
     <copyright id="copyright"></copyright>
     <software id="software"></software>
+    <toTop></toTop>
   </div>
 </template>
 
@@ -28,13 +29,15 @@ import copyright from './copyright/copyright.vue';
 import software from './software/software.vue';
 import awards from './awards/awards.vue';
 import news from './news/news.vue'
+import toTop from '../nav/backToTopButton.vue'
 
 @Component({
   components: {
     copyright,
     software,
     awards,
-    news
+    news,
+    toTop
   }
 })
 export default class Honors extends Vue{

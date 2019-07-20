@@ -7,7 +7,7 @@
                 <div class="card-left">
                     <div class="content-container">
                     <div class="no">01</div>
-                    <h2>暑期训练营</h2>
+                    <h2>新生训练营</h2>
                     <div
                         class="introduce-container"
                     >QG工作室训练营“程序设计及创新实践能力提升班”于每年三月正式开始招生，QG工作室面向全校大一招募大约120名有兴趣、有热诚、有基础的新生，我们采取大组+小组的训练营培训，旨在提高各位新生的程序设计及创新实践能力，在训练营中有连续五周的大组培训，主要培训新生们学习数据结构并实践相关算法，小组培训主要针对各个方向的基础入门内容对新生进行培训。</div>
@@ -16,7 +16,7 @@
                 <div class="card-right">
                     <div class="card-img-container">
                     
-                    <img src="../../assets/images/column/characteristic/camp.jpg"  />
+                    <img src="../../assets/images/column/camp/2018.1.jpg"  />
                     <button class="zoomButton" @click="openMask(0)">
                         <img src="../../assets/icons/zoom.png" alt />
                     </button>
@@ -75,7 +75,9 @@
                     <div class="content-container">
                     <div class="no">04</div>
                     <h2>毕业生合照</h2>
-                    <div class="introduce-container">这是内容</div>
+                    <div class="introduce-container">
+                      QG 科技创新团队心系中国梦的奋进，经过十几年的建设，形成了自己独特的文化和传承，把团队精神的培养上升到与学术与科研能力并重，团队具有很强的凝聚力和战斗力，培养了大批品学兼优、专业知识扎实、能独当一面的创新型人才。团队每年毕业时会进行合照留影。
+                    </div>
                     </div>
                 </div>
                 </div>
@@ -175,23 +177,52 @@ export default class column extends Vue {
     nowImgList: Array<Object> = [];
     campImgList: Array<Object> = [
         {
-            src: require("../../assets/images/column/camp/2016.jpg"),
-            title: "2016年暑期训练营"
+            src: require("../../assets/images/column/camp/2017.2.jpg"),
+            title: "2017年新生训练营宣讲会"
         },
         {
-            src: require("../../assets/images/column/camp/2017.jpg"),
-            title: "2017年暑期训练营"
+            src: require("../../assets/images/column/camp/2017.1.jpg"),
+            title: "2017年新生训练营结营"
         },
         {
-            src: require("../../assets/images/column/camp/2018.jpg"),
-            title: "2018年暑期训练营"
+            src: require("../../assets/images/column/camp/2018.1.jpg"),
+            title: "2018年新生训练营结营"
         },
-        {
-            src: require("../../assets/images/column/camp/2019.jpg"),
-            title: "2019年暑期训练营"
-        }
+        // {
+        //     src: require("../../assets/images/column/camp/2019.jpg"),
+        //     title: "2019年暑期训练营"
+        // }
     ];
-    healthyImgList: Array<Object> = [];
+    healthyImgList: Array<Object> = [
+        {
+            src: require("../../assets/images/column/kl/2.jpg"),
+            title: "早上六点打篮球"
+        },
+        {
+            src: require("../../assets/images/column/kl/1.jpg"),
+            title: "室内康乐看电影"
+        },
+        {
+            src: require("../../assets/images/column/kl/3.jpg"),
+            title: "傍晚跑内环"
+        },
+        {
+            src: require("../../assets/images/column/kl/4.jpg"),
+            title: "室内桌游"
+        },
+        {
+            src: require("../../assets/images/column/kl/5.jpg"),
+            title: "撕名牌"
+        },
+        {
+            src: require("../../assets/images/column/kl/6.jpg"),
+            title: "QG丁俊晖集合地"
+        },
+        {
+            src: require("../../assets/images/column/kl/7.jpg"),
+            title: "早上六点绝命足球"
+        },
+    ];
     techImgList: Array<Object> = [
         {
             src: require("../../assets/images/column/tech/1.jpg"),
@@ -288,9 +319,43 @@ export default class column extends Vue {
             ],
             title: '首次出师，失败的尝试',
             introduce: "团队第一次参赛：作品在比赛前出现了故障，无法工作。结果可想而知，3个月团队的努力以失败告终。出师不利，铩羽而归，士气很低落，一度想放弃。我告诉学生，失败不可怕，可怕的是认为自己不行。从哪跌倒就从哪爬起来。重新振作，总结原因。制定一系列有效的措施和方法。"
+        },
+        {
+            imgList: [
+                { 
+                    src:  require("../../assets/images/column/importantevent/16.png"),
+                    title: '为所有的比赛做出最充分的准备'
+                },
+                { 
+                    src:  require("../../assets/images/column/importantevent/17.png"),
+                    title: '为所有的比赛做出最充分的准备'
+                },
+                { 
+                    src:  require("../../assets/images/column/importantevent/18.jpg"),
+                    title: '为所有的比赛做出最充分的准备'
+                },
+                { 
+                    src:  require("../../assets/images/column/importantevent/19.jpg"),
+                    title: '为所有的比赛做出最充分的准备'
+                },
+                // { 
+                //     src:  require("../../assets/images/column/importantevent/20.bmp"),
+                //     title: '为所有的比赛做出最充分的准备'
+                // },
+                { 
+                    src:  require("../../assets/images/column/importantevent/21.jpg"),
+                    title: '为所有的比赛做出最充分的准备'
+                }
+            ],
+            title: '做事情精益求精',
+            introduce: "面对比赛，我们不断对作品进行完善，数十个日夜颠倒的煎熬与刻苦，数不清多少次的申报材料修改，数不尽多少滴辛苦的汗水落在实验桌上。我们在每次比赛前都会进行多次的预答辩，提出了很多评委可能会问的问题……"
         }, 
         {
             imgList: [
+                { 
+                    src:  require("../../assets/images/column/importantevent/国赛一等奖/4.jpg"),
+                    title: '第十二届“挑战杯”全国大学生竞赛终审决赛'
+                },
                 { 
                     src:  require("../../assets/images/column/importantevent/国赛一等奖/1.jpg"),
                     title: '第十二届“挑战杯”全国大学生竞赛终审决赛'
@@ -299,9 +364,6 @@ export default class column extends Vue {
                     title: '第十二届“挑战杯”全国大学生竞赛终审决赛'
                 }, { 
                     src:  require("../../assets/images/column/importantevent/国赛一等奖/3.jpg"),
-                    title: '第十二届“挑战杯”全国大学生竞赛终审决赛'
-                }, { 
-                    src:  require("../../assets/images/column/importantevent/国赛一等奖/4.jpg"),
                     title: '第十二届“挑战杯”全国大学生竞赛终审决赛'
                 }
             ],
@@ -339,9 +401,17 @@ export default class column extends Vue {
         {
             imgList: [
                 { 
-                    src:  require("../../assets/images/column/importantevent//2018.8.jpg"),
+                    src:  require("../../assets/images/column/importantevent/2018.8.jpg"),
                     title: 'QG工作室”获颁“大学生小平科技创新团队”荣誉称号'
-                }
+                },
+                { 
+                    src:  require("../../assets/images/column/importantevent/13.jpg"),
+                    title: 'QG工作室”获颁“大学生小平科技创新团队”荣誉称号'
+                },
+                { 
+                    src:  require("../../assets/images/column/importantevent/14.png"),
+                    title: 'QG工作室”获颁“大学生小平科技创新团队”荣誉称号'
+                },
             ],
             title: '第三次重要突破',
             introduce: "邓小平同志诞辰114周年之际，第十一届中国青少年科技创新奖颁奖大会于8月24日在人民大会堂举行。“ QG工作室”获颁“大学生小平科技创新团队”荣誉称号。中共中央政治局委员、国务院副总理孙春兰出席并讲话，为获奖代表颁奖。该称号以邓小平同志命名，由共青团中央、全国青联、全国学联、全国少工委、中国青少年科技创新奖励基金共同设立, 旨在面向全国大学生遴选在学术研究、科技竞赛、成果转化等方面取得突出成绩或显示较大潜力的大学生科技创新团队给予支持。全国共有50个大学生创新团队获此项殊荣。（省内仅广工与华工两个团队）。"
@@ -387,10 +457,10 @@ export default class column extends Vue {
                     title: '工作室接受广东卫视采访'
                 }, {
                     src: require("../../assets/images/column/importantevent/新闻报道/4.jpg"),
-                    title: '工作室接受广东卫视采访'
+                    title: '工作室接受南方卫视采访'
                 }, {
                     src: require("../../assets/images/column/importantevent/新闻报道/5.jpg"),
-                    title: '工作室接受广东卫视采访'
+                    title: '工作室接受南方卫视采访'
                 }
             ],
             title: '新闻报道工作室',
@@ -412,12 +482,12 @@ export default class column extends Vue {
         {
             imgList: [
                 { 
-                    src:  require("../../assets/images/column/camp/2016.jpg"),
+                    src:  require("../../assets/images/column/importantevent/23.jpg"),
                     title: '首次出征'
                 }
             ],
             title: '我们仍在路上',
-            introduce: 'We are still on the road...'
+            introduce: 'We are still on the way...'
         }
     ];
     
