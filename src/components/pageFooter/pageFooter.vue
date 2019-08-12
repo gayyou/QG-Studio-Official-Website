@@ -20,7 +20,7 @@
 
 <template>
   <div class="page-footer">
-    <span>© 2019 QG Studio All Rights Reserved</span>
+    <a href="http://www.beian.miit.gov.cn/"><span>© 2019 QG Studio All Rights Reserved 粤ICP备19036095号-2</span></a>
   </div>
 </template>
 

@@ -18,9 +18,17 @@
   border-bottom: #ccc solid 1px;
 
   .nav-logo-container {
+    position: relative;
     width: 2rem;
     height: 0.96rem;
     padding: 0 0.32rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      width: 100%;
+    }
   }
 
   .nav-list-container {
@@ -77,7 +85,7 @@
   <div class="nav-container">
     <div class="nav-first-header">
       <div class="nav-logo-container">
-        <img src=""/>
+        <img src="@/assets/icons/qglogo.png"/>
       </div>
       <nav class="nav-list-container" @click="switchFirstNav">
         <li
@@ -295,9 +303,12 @@ export default class Nav extends Vue {
     }
 
     this.$data.secondNavList[index].isActive = true;
-    let t = $('#' + this.$data.secondNavList[index].label).offset() || { top: 0 };
-    const ref = <any>this.$root.$children[0].$refs['scrollbar']  // 强制类型转换
-    ref.wrap.scrollTop = t.top;
+    // console.log(index)
+    this.$store.state.mode = parseInt(index) + 1;
+    
+    // let t = $('#' + this.$data.secondNavList[index].label).offset() || { top: 0 };
+    // const ref = <any>this.$root.$children[0].$refs['scrollbar']  // 强制类型转换
+    // ref.wrap.scrollTop = t.top;
     // console.log(this.$root.$children[0].$refs['scrollbar'])
   }
 

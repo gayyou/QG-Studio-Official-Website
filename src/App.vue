@@ -26,12 +26,24 @@
 .el-pagination.is-background .el-pager li:not(.disabled).active {
   background-color: #e8d6ff!important;
 }
+.is-vertical {
+    z-index: 999999!important;
+}
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
 </style>
 
 
 <template>
   <div id="app">
-    <el-scrollbar ref="scrollbar" style="height: 100vh;width: 100%;">
+    <transition name="fade">
+    <loading v-if="!iscompleted" style="z-index: 9999999"></loading>
+    </transition>
+    <el-scrollbar v-if="iscompleted" ref="scrollbar" style="height: 100vh;width: 100%;">
       <nav-list></nav-list>
       <router-view></router-view>
       <page-footer class="footer"></page-footer>
@@ -44,18 +56,31 @@ import Vue from 'vue'
 import Component from 'vue-class-component'
 import nav from './components/nav/nav.vue'
 import pageFooter from './components/pageFooter/pageFooter.vue'
+import loading from './components/loading/loading.vue'
 
 @Component({
   components: {
     'nav-list': nav,
-    'page-footer': pageFooter
+    'page-footer': pageFooter,
+    loading
   }
 })
 export default class App extends Vue {
+  iscompleted: boolean = false;
+
   mounted() {
-    console.log(this);
-    // console.log(this.$refs['scrollbar'])
-    // document.getElementsByClassName('el-scrollbar__wrap')[0].style.overflowX = 'hidden';
+    setTimeout(() => {
+      if (document.readyState == "complete") {
+        // 已经加载完毕的，那么就显示
+        this.iscompleted = true
+      } else {
+        // 未加载完毕，就等在加载完毕
+        window.onload = () => {
+          this.iscompleted = true
+        }
+      }
+    }, 5800);
+    
   }
 }
 </script>

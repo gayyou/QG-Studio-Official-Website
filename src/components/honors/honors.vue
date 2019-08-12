@@ -14,10 +14,10 @@
 
 <template>
   <div class="honors-container">
-    <awards id="awards"></awards>
-    <news id="news"></news>
-    <copyright id="copyright"></copyright>
-    <software id="software"></software>
+    <awards id="awards" v-if="$store.state.mode == 1"></awards>
+    <news id="news" v-if="$store.state.mode == 2"></news>
+    <copyright id="copyright" v-if="$store.state.mode == 3"></copyright>
+    <software id="software" v-if="$store.state.mode == 4"></software>
     <toTop></toTop>
   </div>
 </template>

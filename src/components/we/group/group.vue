@@ -1,3 +1,238 @@
+<<<<<<< HEAD
+<style lang="scss" scoped>
+.group-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  height: 90vh;
+  
+  >div {
+    position: relative;
+    width: 50vw;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .choice-group {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .choice-container {
+      position: relative;
+      width: 8.1rem;
+      height: 8rem;
+      
+      span {
+        position: relative;
+        cursor: pointer;
+        display: block;
+        font-size: 0.24rem;
+        margin-top: .64rem;
+        text-align: start;
+        transition: .5s ease all;
+
+        div {
+          position: absolute;
+          z-index: -1;
+          left: -.2rem;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 100%;
+          height: .24rem;
+        }
+      }
+
+      .active {
+        font-size: 0.48rem;
+      }
+    }
+    .choice-container::after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+  }
+}
+.group-container {
+
+}
+</style>
+
+<template>
+  <div class="group-container">
+    <div class="choice-group">
+      <div class="choice-container">
+        <span 
+          v-for="(item, index) in groupList"
+          :key="item.name"
+          :data-index="index"
+          :class="index == currentIndex ? 'active' : ''"
+          @click="changeGroup"
+        >
+        {{ item.name }}
+        <div
+          v-show="index == currentIndex"
+          :style="'background-color: ' + item.toColor"
+        ></div>
+        </span>
+      </div>
+    </div>
+    <div class="show-group">
+      <list
+        v-for="(item, index) in groupList"
+        :key="item.name"
+        :data-index="index"
+        :floatIconUrl="item.floatIconUrl"
+        :zIndex="item.zIndex"
+        :fromColor="item.fromColor"
+        :toColor="item.toColor"
+        :width="item.width"
+        :url="item.url"
+        :intro="item.intro"
+        :isActive="currentIndex === index"
+      ></list>
+    </div>
+  </div>
+</template>
+
+<script lang="ts">
+import Vue from 'vue'
+import list from './list/list.vue'
+import Component from 'vue-class-component'
+
+@Component({
+  components: {
+    list
+  }
+})
+export default class Group extends Vue {
+  currentIndex: number = -1;
+
+  groupList: Array<any> = [
+    {
+      name: '分布式智能网络化系统小组前端方向',
+      intro: '前端在网络开发中属于呈现给用户的部分，最具有代表性的莫过于传统的网页。前端组一直紧随最前沿的技术脚步，秉承着用户体验至上的原则，完成用户的需求。前端发展至今天，所能完成的任务可不仅仅于此，前端开发者探索的脚步从未停止，我们可以用Node.js进行高性能后端开发。我们创造出挑战原生APP地位的webapp小程序，更可以开发桌面级应用。想你所想，前端的未来将由你来开拓。',
+      url: require('@/assets/icons/front.png'),
+      activeUrl: require('@/assets/icons/front_small.png'),
+      bgUrl: require('@/assets/images/we/group/front.png'),
+      floatIconUrl: require('@/assets/icons/triangle_red.png'),
+      fromColor: '#ED3E46',
+      toColor: '#ff9c9c',
+      width: 4,
+      zIndex: 1,
+    },
+    {
+      name: '分布式智能网络化系统小组后台方向',
+      intro: '后台是一个与数据和信息打交道的方向，负责着各类数据的处理与传输。无论是网页端、移动端还是嵌入式端，都需要后台技术的支持。QG后台组基于Java语言，自成立以来致力于后台服务器的开发，成功为工作室多数项目提供了坚实的后台技术支持，慢慢成长为一支团结可靠的队伍。',
+      url: require('@/assets/icons/end.png'),
+      activeUrl: require('@/assets/icons/end_small.png'),
+      bgUrl: require('@/assets/images/we/group/end.png'),
+      floatIconUrl: require('@/assets/icons/tripe_circle blue.png'),
+      fromColor: '#2b8be1',
+      toColor: '#97c4fe',
+      width: 4,
+      zIndex: 1
+    },
+    {
+      name: '大数据挖掘与知识管理小组',
+      intro: '大数据挖掘与知识管理小组，研究方向为大数据的存储、获取与运算以及机器学习的算法，是与当下流行的人工智能最相关的组。小组以机器学习的基本理论，使用数据分析库进行数据科学的研究和实践，利用Linux下的Hadoop、Spark等框架进行大数据的存储和运算。如果你是一个不仅喜欢编程，对数据的力量充满好奇，想要了解数据科学的话，请带上你的热情，来我们数据挖掘组报名吧！',
+      url: require('@/assets/icons/data.png'),
+      activeUrl: require('@/assets/icons/data_small.png'),
+      bgUrl: require('@/assets/images/we/group/data.png'),
+      floatIconUrl: require('@/assets/icons/line.png'),
+      fromColor: '#EC502C',
+      toColor: '#f5c295',
+      width: 4,
+      zIndex: 8
+    },
+    {
+      name: '分布式智能系统小组',
+      intro: '作为计算机学院历史最悠久、实力最强的嵌入式开发团队。小组内部有着丰富的开发资源及技术传承，主要研究方向为基于ARM+LINUX平台以及其他各类开发板的嵌入式软件开发。小组的学习之旅主要伴随着比赛，近年来获得过许多奖项，第十四届“挑战杯”全国大学生课外学术科技作品竞赛香港专项赛特等奖更是刷新了学校在挑战杯获奖层次的记录。',
+      url: require('@/assets/icons/embedded.png'),
+      activeUrl: require('@/assets/icons/embedded_small.png'),
+      bgUrl: require('@/assets/images/we/group/embedded.png'),
+      floatIconUrl: require('@/assets/icons/square.png'),
+      fromColor: '#37AC47',
+      toColor: '#9ad29c',
+      width: 4,
+      zIndex: 1
+    },
+    {
+      name: '智能移动技术小组',
+      intro: '智能手机应用开发小组，简称移动组。小组在结构上前前后后经历了三次变革，主攻方向从Android应用/游戏开发变为Android应用/后台开发再到现在的纯Android应用开发。',
+      url: require('@/assets/icons/mobile.png'),
+      activeUrl: require('@/assets/icons/mobile_small.png'),
+      bgUrl: require('@/assets/images/we/group/mobile.png'),
+      floatIconUrl: require('@/assets/icons/rectangle_yellow.png'),
+      fromColor: '#FDEB2F',
+      toColor: '#fbf8ab',
+      width: 2.5,
+      zIndex: 1
+    },
+    {
+      name: '人机交互与UI设计小组',
+      intro: '设计组的主要研究方向是手机游戏和网页的界面设计及交互，游戏原画设计以及平面设计。我们旨在锻炼成员的创新能力、创意思想，培养成员的视觉设计和交互设计能力。除此之外，设计组也在着手3D模型的设计以及3D打印机的使用，产出的智能打印机和智能头盔已经斩获多个奖项，更是在挑战杯校赛中协助取得特等奖、一等奖的好成绩。想用你的创意思维点燃技术的光芒吗？设计组在这里等你！',
+      url: require('@/assets/icons/design.png'),
+      activeUrl: require('@/assets/icons/design_small.png'),
+      bgUrl: require('@/assets/images/we/group/design.png'),
+      floatIconUrl: require('@/assets/icons/circle_pink.png'),
+      fromColor: '#FC71A4',
+      toColor: '#ffd8d8',
+      width: 3.5,
+      zIndex: 1
+    },
+    {
+      name: '虚拟现实与智能交互小组',
+      intro: '图形渲染组（前身手游组）的研究方向为计算机图形学与AR/VR开发。小组以DirectX、Unity3D作为主要学习方向，DirectX用于理解底层图形渲染原理，Unity3D引擎用于开发AR/VR应用程序、仿真平台以及其他交互式媒体应用程序。',
+      url: require('@/assets/icons/image.png'),
+      activeUrl: require('@/assets/icons/image_small.png'),
+      bgUrl: require('@/assets/images/we/group/game.png'),
+      floatIconUrl: require('@/assets/icons/diamond_gold.png'),
+      fromColor: '#EC502C',
+      toColor: '#d1c88c',
+      width: 3,
+      zIndex: 1
+    }
+  ];
+
+  groupNameList: any = [];
+
+  isMoving: boolean = false;
+
+  mounted() {
+    // (<any>document.getElementsByClassName('el-carousel__indicators')[0]).style.display = 'none';
+    this.groupNameList = []
+    for (let i = 0; i < this.groupList.length; i++) {
+      let name = this.groupList[i].name
+      this.groupNameList.push({
+        name
+      })
+    };
+    this.currentIndex = 0
+  }
+
+  changeGroup(event: any) {
+    if (this.isMoving) return ;
+    let index = event.target.getAttribute('data-index');
+    let temp = this.currentIndex;
+    if (!index) return ;
+    this.groupList[temp].zIndex = 9;
+    this.groupList[parseInt(index)].zIndex = 999;
+    this.$nextTick(() => {
+      this.currentIndex = parseInt(index);
+    })
+    this.isMoving = true
+    setTimeout(() => {
+      this.isMoving = false;
+    }, 1500)
+    // (<any>this.$children[0]).setActiveItem(this.currentIndex);
+  }
+}
+</script>
+=======
 <style lang="scss" scoped>
 .group-container {
   position: relative;
@@ -304,3 +539,4 @@ export default class Group extends Vue {
   }
 }
 </script>
+>>>>>>> ccb3fdb5f928aef2f3724779c1b7534d8828d9d1
