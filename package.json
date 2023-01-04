@@ -15,9 +15,9 @@
   },
   "devDependencies": {
     "@types/jquery": "^3.3.30",
-    "@vue/cli-plugin-babel": "^3.8.0",
+    "@vue/cli-plugin-babel": "^5.0.8",
     "@vue/cli-plugin-typescript": "^3.8.0",
-    "@vue/cli-service": "^3.8.0",
+    "@vue/cli-service": "^5.0.8",
     "element-ui": "^2.9.2",
     "jQuery": "^1.7.4",
     "jquery": "^3.4.1",
